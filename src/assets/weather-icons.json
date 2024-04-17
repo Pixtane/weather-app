@@ -320,5 +320,10 @@
     "icon": "Cloudy",
     "title": "Overcast clouds",
     "description": "Overcast clouds"
+  },
+  "undefined": {
+    "icon": "Cloudy",
+    "title": "Unknown",
+    "description": "Unknown"
   }
 }

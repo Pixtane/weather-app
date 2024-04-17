@@ -88,9 +88,9 @@ function App() {
             }}
           ></PlaceSearchComponent>
         )}
-        {weatherData && <div>{JSON.stringify(weatherData)}</div>}
+        {/* {weatherData && <div>{JSON.stringify(weatherData)}</div>} */}
 
-        {weatherData && <WeatherDataComponent />}
+        {weatherData && <WeatherDataComponent weatherData={weatherData} />}
       </>
     );
   } else {

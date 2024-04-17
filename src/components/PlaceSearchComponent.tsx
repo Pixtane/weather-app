@@ -89,62 +89,6 @@ const PlaceSearchComponent = (props: Props) => {
           </li>
         ))}
       </ul>
-
-      <div data-todo="DELETE THIS" className="bg-[#282828] h-full w-full">
-        {[
-          "Blizzard",
-          "BlowingDust",
-          "Breezy",
-          "Clear",
-          "Clear-night",
-          "Cloudy",
-          "Drizzle",
-          "Flurries",
-          "Foggy",
-          "Foggy-night",
-          "FreezingDrizzle",
-          "FreezingRain",
-          "Frigid",
-          "Haze",
-          "Haze-night",
-          "Hail",
-          "HeavyRain",
-          "HeavySnow",
-          "Hot",
-          "Hot-night",
-          "Hurricane",
-          "IsolatedThunderstorms",
-          "MostlyClear",
-          "MostlyClear-night",
-          "MostlyCloudy",
-          "MostlyCloudy-night",
-          "PartlyCloudy",
-          "PartlyCloudy-night",
-          "Rain",
-          "ScatteredThunderstorms",
-          "Sleet",
-          "Smoky",
-          "Smoky-night",
-          "Snow",
-          "StrongStorms",
-          "SunFlurries",
-          "SunFlurries-night",
-          "Thunderstorms",
-          "TropicalStorm",
-          "Windy",
-          "WintryMix",
-        ].map((condition, index) => (
-          <div className="flex items-center">
-            <img
-              key={index}
-              className="h-20"
-              src={`/src/assets/weather-icons/${condition}.svg`}
-              alt={condition}
-            />{" "}
-            <p>{condition}</p>
-          </div>
-        ))}
-      </div>
     </div>
   );
 };

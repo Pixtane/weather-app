@@ -4,7 +4,7 @@ async function getWeatherData(lat: number, lon: number) {
   const apiKey = import.meta.env.VITE_API_KEY; // Replace with your actual API key
   const proxyUrl = "https://cors-anywhere.herokuapp.com/"; // Example CORS proxy
 
-  const url = `${proxyUrl}https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+  const url = `${proxyUrl}https://api.openweathermap.org/data/2.5/weather?lat=${lat}&units=metric&lon=${lon}&appid=${apiKey}`;
 
   try {
     const response = await axios.get(url, {
