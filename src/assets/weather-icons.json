@@ -1,0 +1,324 @@
+{
+  "200": {
+    "icon": "Thunderstorms",
+    "title": "Thunderstorm",
+    "description": "Thunderstorm with light rain",
+    "isRain": true
+  },
+  "201": {
+    "icon": "Thunderstorms",
+    "title": "Thunderstorm",
+    "description": "Thunderstorm with rain",
+    "isRain": true
+  },
+  "202": {
+    "icon": "Thunderstorms",
+    "title": "Thunderstorm",
+    "description": "Thunderstorm with heavy rain",
+    "isRain": true
+  },
+  "210": {
+    "icon": "Thunderstorms",
+    "title": "Thunderstorm",
+    "description": "Light thunderstorm",
+    "isRain": true
+  },
+  "211": {
+    "icon": "Thunderstorms",
+    "title": "Thunderstorm",
+    "description": "Thunderstorm",
+    "isRain": true
+  },
+  "212": {
+    "icon": "StrongStorms",
+    "title": "Thunderstorm",
+    "description": "Heavy thunderstorm",
+    "isRain": true
+  },
+  "221": {
+    "icon": "ScatteredThunderstorms",
+    "title": "Thunderstorm",
+    "description": "Ragged thunderstorm",
+    "isRain": true
+  },
+  "230": {
+    "icon": "Thunderstorms",
+    "title": "Thunderstorm",
+    "description": "Thunderstorm with light drizzle",
+    "isRain": true
+  },
+  "231": {
+    "icon": "Thunderstorms",
+    "title": "Thunderstorm",
+    "description": "Thunderstorm with drizzle",
+    "isRain": true
+  },
+  "232": {
+    "icon": "Thunderstorms",
+    "title": "Thunderstorm",
+    "description": "Thunderstorm with heavy drizzle",
+    "isRain": true
+  },
+  "300": {
+    "icon": "Drizzle",
+    "title": "Drizzle",
+    "description": "Light intensity drizzle",
+    "isRain": true
+  },
+  "301": {
+    "icon": "Drizzle",
+    "title": "Drizzle",
+    "description": "Drizzle",
+    "isRain": true
+  },
+  "302": {
+    "icon": "Drizzle",
+    "title": "Drizzle",
+    "description": "Heavy intensity drizzle",
+    "isRain": true
+  },
+  "310": {
+    "icon": "Drizzle",
+    "title": "Drizzle",
+    "description": "Light intensity drizzle rain",
+    "isRain": true
+  },
+  "311": {
+    "icon": "Drizzle",
+    "title": "Drizzle",
+    "description": "Drizzle rain",
+    "isRain": true
+  },
+  "312": {
+    "icon": "Drizzle",
+    "title": "Drizzle",
+    "description": "Heavy intensity drizzle rain",
+    "isRain": true
+  },
+  "313": {
+    "icon": "Drizzle",
+    "title": "Drizzle",
+    "description": "Shower rain and drizzle",
+    "isRain": true
+  },
+  "314": {
+    "icon": "Drizzle",
+    "title": "Drizzle",
+    "description": "Heavy shower rain and drizzle",
+    "isRain": true
+  },
+  "321": {
+    "icon": "Drizzle",
+    "title": "Drizzle",
+    "description": "Shower drizzle",
+    "isRain": true
+  },
+  "500": {
+    "icon": "Rain",
+    "title": "Rain",
+    "description": "Light rain",
+    "isRain": true
+  },
+  "501": {
+    "icon": "Rain",
+    "title": "Rain",
+    "description": "Moderate rain",
+    "isRain": true
+  },
+  "502": {
+    "icon": "Rain",
+    "title": "Rain",
+    "description": "Heavy intensity rain",
+    "isRain": true
+  },
+  "503": {
+    "icon": "Rain",
+    "title": "Rain",
+    "description": "Very heavy rain",
+    "isRain": true
+  },
+  "504": {
+    "icon": "Rain",
+    "title": "Rain",
+    "description": "Extreme rain",
+    "isRain": true
+  },
+  "511": {
+    "icon": "FreezingRain",
+    "title": "Freezing rain",
+    "description": "Freezing rain",
+    "isRain": true
+  },
+  "520": {
+    "icon": "HeavyRain",
+    "title": "Rain",
+    "description": "Light intensity shower rain",
+    "isRain": true
+  },
+  "521": {
+    "icon": "HeavyRain",
+    "title": "Rain",
+    "description": "Shower rain",
+    "isRain": true
+  },
+  "522": {
+    "icon": "HeavyRain",
+    "title": "Rain",
+    "description": "Heavy intensity shower rain",
+    "isRain": true
+  },
+  "531": {
+    "icon": "HeavyRain",
+    "title": "Rain",
+    "description": "Ragged shower rain",
+    "isRain": true
+  },
+  "600": {
+    "icon": "Snow",
+    "title": "Snow",
+    "description": "Light snow",
+    "isRain": true
+  },
+  "601": {
+    "icon": "Snow",
+    "title": "Snow",
+    "description": "Snow",
+    "isRain": true
+  },
+  "602": {
+    "icon": "HeavySnow",
+    "title": "Snow",
+    "description": "Heavy snow",
+    "isRain": true
+  },
+  "611": {
+    "icon": "Sleet",
+    "title": "Sleet",
+    "description": "Sleet",
+    "isRain": true
+  },
+  "612": {
+    "icon": "Sleet",
+    "title": "Sleet",
+    "description": "Light shower sleet",
+    "isRain": true
+  },
+  "613": {
+    "icon": "Sleet",
+    "title": "Sleet",
+    "description": "Shower sleet",
+    "isRain": true
+  },
+  "615": {
+    "icon": "WintryMix",
+    "title": "Sleet",
+    "description": "Light rain and snow",
+    "isRain": true
+  },
+  "616": {
+    "icon": "WintryMix",
+    "title": "Sleet",
+    "description": "Rain and snow",
+    "isRain": true
+  },
+  "620": {
+    "icon": "Snow",
+    "title": "Snow",
+    "description": "Light shower snow",
+    "isRain": true
+  },
+  "621": {
+    "icon": "HeavySnow",
+    "title": "Snow",
+    "description": "Shower snow",
+    "isRain": true
+  },
+  "622": {
+    "icon": "HeavySnow",
+    "title": "Snow",
+    "description": "Heavy shower snow",
+    "isRain": true
+  },
+  "701": {
+    "icon": "Haze",
+    "night": "Haze-night",
+    "title": "Mist",
+    "description": "Mist"
+  },
+  "711": {
+    "icon": "Smoky",
+    "night": "Smoky-night",
+    "title": "Smoke",
+    "description": "Smoke"
+  },
+  "721": {
+    "icon": "Haze",
+    "night": "Haze-night",
+    "title": "Haze",
+    "description": "Haze"
+  },
+  "731": {
+    "icon": "BlowingDust",
+    "title": "Dust",
+    "description": "Dust"
+  },
+  "741": {
+    "icon": "Foggy",
+    "night": "Foggy-night",
+    "title": "Fog",
+    "description": "Fog"
+  },
+  "751": {
+    "icon": "BlowingDust",
+    "title": "Sand",
+    "description": "Sand"
+  },
+  "761": {
+    "icon": "BlowingDust",
+    "title": "Dust",
+    "description": "Dust"
+  },
+  "762": {
+    "icon": "BlowingDust",
+    "title": "Ash",
+    "description": "Volcanic Ash"
+  },
+  "771": {
+    "icon": "Breezy",
+    "title": "Squalls",
+    "description": "Squalls"
+  },
+  "781": {
+    "icon": "Hurricane",
+    "title": "Tornado",
+    "description": "Tornado"
+  },
+  "800": {
+    "icon": "Clear",
+    "night": "Clear-night",
+    "title": "Clear sky",
+    "description": "Clear sky"
+  },
+  "801": {
+    "icon": "PartlyCloudy",
+    "night": "PartlyCloudy-night",
+    "title": "Few clouds",
+    "description": "Few clouds"
+  },
+  "802": {
+    "icon": "MostlyCloudy",
+    "night": "MostlyCloudy-night",
+    "title": "Scattered clouds",
+    "description": "Scattered clouds"
+  },
+  "803": {
+    "icon": "Cloudy",
+    "title": "Broken clouds",
+    "description": "Broken clouds"
+  },
+  "804": {
+    "icon": "Cloudy",
+    "title": "Overcast clouds",
+    "description": "Overcast clouds"
+  }
+}

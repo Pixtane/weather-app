@@ -20,3 +20,30 @@ body {
   font-family: 'Lexend Deca', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   @apply text-white;
 }
+
+.place-item {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  /* Adjust transition properties as desired */
+  list-style: none;
+}
+
+.place-item-enter {
+  opacity: 1;
+}
+
+[data-tooltip]::after {
+  display: block;
+  position: absolute;
+  content: attr(data-tooltip);
+  border: 1px solid black;
+  padding: .25em;
+  scale: 0;
+  white-space: pre-line;
+  @apply transition-all origin-top-left duration-300 delay-1000 bg-gray-500 text-white border border-black rounded-md w-[30rem] break-words;
+}
+
+[data-tooltip]:hover::after {
+  scale: 1;
+  z-index: 1000;
+}
