@@ -7,8 +7,6 @@ type Props = {
 function WeatherDataComponent(props: Props) {
   let weatherIconsData =
     weatherIcons[props.weatherData.weather[0].id as keyof typeof weatherIcons];
-
-  console.log(props.weatherData.weather.id);
   return (
     <>
       <div className="weatherDataComponent w-full flex flex-col items-center">
@@ -28,13 +26,13 @@ function WeatherDataComponent(props: Props) {
 
           <div className="flex flex-row text-gray-50 items-center text-3xl mt-4">
             {props.weatherData.weather[0].main}{" "}
-            <p className="flex ml-3">
+            <div className="flex ml-3">
               {Number(props.weatherData.main.temp_min).toFixed(0)}
               <p className="tracking-tighter ml-0.5">°C</p>
               <p className="text-gray-300">/</p>
               {Number(props.weatherData.main.temp_max).toFixed(0)}
               <p className="tracking-tighter ml-0.5">°C</p>
-            </p>
+            </div>
           </div>
         </div>
       </div>

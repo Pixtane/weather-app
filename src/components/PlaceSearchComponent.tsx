@@ -67,25 +67,33 @@ const PlaceSearchComponent = (props: Props) => {
           <li
             key={index + ": " + place.lat + "|" + place.lng}
             className={
-              "border border-gray-300 transition-all -mt-[1px] p-1.5 bg-gray-800 hover:bg-gray-700 active:bg-gray-600 cursor-pointer " +
+              "border border-gray-300 transition-all -mt-[1px] p-1.5 bg-gray-800 hover:bg-gray-700 active:bg-gray-600 cursor-pointer flex items-center justify-between " +
               (index === 0 ? "rounded-t-lg" : "")
             }
             onClick={() => props.onPlaceSelect(place)}
-            data-tooltip={JSON.stringify(place)
-              .replace(/"[^"]*"/g, (match) => match.replace(/,/g, ""))
-              .replace(/"/g, "")
-              .replace(/:/g, ": ")
-              .replace(/,/g, "\n")
-              .slice(1, -1)}
           >
-            <p className="font-semibold">
-              {place.name},{" "}
-              {countrycodes[place.countryCode as keyof typeof countrycodes]}
-            </p>
-            <p className="text-sm font-light">
-              Lat/Lon: {Number(place.lat).toFixed(2)}/
-              {Number(place.lng).toFixed(2)}
-            </p>
+            <div>
+              <p className="font-semibold">
+                {place.name},{" "}
+                {countrycodes[place.countryCode as keyof typeof countrycodes]}
+              </p>
+              <p className="text-sm font-light">
+                Lat/Lon: {Number(place.lat).toFixed(2)}/
+                {Number(place.lng).toFixed(2)}
+              </p>
+            </div>
+
+            <div
+              data-tooltip={JSON.stringify(place)
+                .replace(/"[^"]*"/g, (match) => match.replace(/,/g, ""))
+                .replace(/"/g, "")
+                .replace(/:/g, ": ")
+                .replace(/,/g, "\n")
+                .slice(1, -1)}
+              className=" bg-gray-600 rounded h-10 w-10 mr-0.5 flex items-center justify-center"
+            >
+              <p className="text-2xl">?</p>
+            </div>
           </li>
         ))}
       </ul>

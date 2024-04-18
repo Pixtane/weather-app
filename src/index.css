@@ -40,7 +40,7 @@ body {
   padding: .25em;
   scale: 0;
   white-space: pre-line;
-  @apply transition-all origin-top-left duration-300 delay-1000 bg-gray-500 text-white border border-black rounded-md w-[30rem] break-words;
+  @apply transition-all origin-top-right duration-300 delay-200 bg-gray-500 text-white border border-black rounded-md w-[30rem] right-6 top-[8rem] break-words;
 }
 
 [data-tooltip]:hover::after {

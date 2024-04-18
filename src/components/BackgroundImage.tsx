@@ -1,46 +1,42 @@
-import sunnyJSON from "../assets/backgrounds/01d/background.json";
-import overcastJSON from "../assets/backgrounds/04d/background.json";
-import showerJSON from "../assets/backgrounds/09d/background.json";
-import rainJSON from "../assets/backgrounds/10d/background.json";
-import thunderstormJSON from "../assets/backgrounds/11d/background.json";
-import mistJSON from "../assets/backgrounds/50d/background.json";
-import mistnJSON from "../assets/backgrounds/50n/background.json";
+import * as React from "react";
+import * as backgrounds from "../assets/backgrounds";
 
 type Props = {
   weatherData: any;
 };
 
 function BackgroundImage(props: Props) {
-  let weatherIcon = props.weatherData.weather[0].icon
-    ? props.weatherData.weather[0].icon
-    : "01d";
+  const weatherIcon = props.weatherData.weather[0].icon || "01d";
 
-  let lookup: any = {
-    "01d": sunnyJSON,
-    "04d": overcastJSON,
-    "09d": showerJSON,
-    "10d": rainJSON,
-    "11d": thunderstormJSON,
-    "50d": mistJSON,
-    "50n": mistnJSON,
+  const lookup: any = {
+    "01d": backgrounds.d01,
+    "02d": backgrounds.d02,
+    "03d": backgrounds.d03,
+    "04d": backgrounds.d04,
+    "09d": backgrounds.d09,
+    "10d": backgrounds.d10,
+    "11d": backgrounds.d11,
+    "13d": backgrounds.d13,
+    "50d": backgrounds.d50,
+    "01n": backgrounds.n01,
+    "02n": backgrounds.n02,
+    "03n": backgrounds.n03,
+    "04n": backgrounds.n04,
+    "09n": backgrounds.n09,
+    "10n": backgrounds.n10,
+    "11n": backgrounds.n11,
+    "13n": backgrounds.n13,
+    "50n": backgrounds.n50,
   };
 
-  console.log(
-    "Weather icon",
-    weatherIcon,
-    "bg",
-    lookup[weatherIcon].background
-  );
-
   return (
-    <>
-      <div>
-        <img
-          className="background w-screen h-screen fixed -z-10 top-0 left-0 object-cover"
-          src={lookup[weatherIcon].background}
-        />
-      </div>
-    </>
+    <div>
+      <img
+        className="background w-screen h-screen fixed -z-10 top-0 left-0 object-cover"
+        src={lookup[weatherIcon].background}
+        alt="Background"
+      />
+    </div>
   );
 }
 

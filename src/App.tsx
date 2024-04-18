@@ -6,8 +6,7 @@ import BackgroundImage from "./components/BackgroundImage";
 import WeatherDataComponent from "./components/WeatherDataComponent";
 
 function App() {
-  const [weatherData, setWeatherData] = useState(null);
-  const [city, setCity] = useState("London");
+  const [weatherData, setWeatherData] = useState<any>(null);
   const [isSearchHidden, setIsSearchHidden] = useState(true);
 
   let storedCoordinates = localStorage.getItem("coordinates");
@@ -34,7 +33,10 @@ function App() {
           (currentTimestamp - storedTimestamp) / (1000 * 60 * 60);
 
         // If less than a day has passed, use stored data
-        if (hoursPassed < 24 && parsedWeatherData.data.name === city) {
+        if (
+          hoursPassed < 24 &&
+          parsedWeatherData.data.name === (weatherData ? weatherData.name : "")
+        ) {
           setWeatherData(parsedWeatherData.data);
           return;
         }
@@ -65,7 +67,7 @@ function App() {
       <>
         {weatherData && <BackgroundImage weatherData={weatherData} />}
 
-        <div className="topNavbar flex">
+        <div className="topNavbar pt-2 flex">
           {isSearchHidden && (
             <div className="absolute p-5">
               <button onClick={() => setIsSearchHidden(false)}>
@@ -74,21 +76,12 @@ function App() {
             </div>
           )}
 
-          <h1 className="w-full text-center font-bold text-3xl p-5">
-            Weather App
+          <h1 className="w-full text-center font-semibold text-4xl p-5">
+            {weatherData ? weatherData.name : "Weather app"}
           </h1>
         </div>
 
-        {!isSearchHidden && (
-          <PlaceSearchComponent
-            onPlaceSelect={(data) => {
-              setIsSearchHidden(true);
-              setCity(data.name);
-              setNewCoordinates({ lat: data.lat, lon: data.lng });
-            }}
-          ></PlaceSearchComponent>
-        )}
-        {/* {weatherData && <div>{JSON.stringify(weatherData)}</div>} */}
+        {weatherData && <div>{JSON.stringify(weatherData)}</div>}
 
         {weatherData && <WeatherDataComponent weatherData={weatherData} />}
       </>
@@ -98,7 +91,6 @@ function App() {
       <PlaceSearchComponent
         onPlaceSelect={(data) => {
           setIsSearchHidden(true);
-          setCity(data.name);
           setNewCoordinates({ lat: data.lat, lon: data.lng });
         }}
       ></PlaceSearchComponent>
