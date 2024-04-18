@@ -26,7 +26,7 @@ function WeatherDataComponent(props: Props) {
             <p className="tracking-tighter text-5xl ml-0">°C</p>
           </div>
 
-          <div className="flex flex-row text-gray-50 items-center text-3xl">
+          <div className="flex flex-row text-gray-50 items-center text-3xl mt-4">
             {props.weatherData.weather[0].main}{" "}
             <p className="flex ml-3">
               {Number(props.weatherData.main.temp_min).toFixed(0)}
