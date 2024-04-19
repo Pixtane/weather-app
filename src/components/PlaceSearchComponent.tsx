@@ -26,7 +26,6 @@ const PlaceSearchComponent = (props: Props) => {
           q: placeName,
           username: import.meta.env.VITE_GEONAMES_USERNAME,
           featureClass: "P", // Populated places
-          featureCode: "PPL", // Cities, towns, villages, etc.
         },
       });
 

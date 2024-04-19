@@ -3,10 +3,12 @@ import getWeatherData from "./getWeatherData";
 import PlaceSearchComponent from "./components/PlaceSearchComponent";
 import mapsvg from "./assets/map.svg";
 import BackgroundImage from "./components/BackgroundImage";
-import WeatherDataComponent from "./components/WeatherDataComponent";
+import WeatherTitleComponent from "./components/WeatherTitleComponent";
+import WeatherDetailedComponent from "./components/WeatherDetailedComponent";
 
 function App() {
   const [weatherData, setWeatherData] = useState<any>(null);
+  const [city, setCity] = useState("London");
   const [isSearchHidden, setIsSearchHidden] = useState(true);
 
   let storedCoordinates = localStorage.getItem("coordinates");
@@ -33,10 +35,12 @@ function App() {
           (currentTimestamp - storedTimestamp) / (1000 * 60 * 60);
 
         // If less than a day has passed, use stored data
-        if (
-          hoursPassed < 24 &&
-          parsedWeatherData.data.name === (weatherData ? weatherData.name : "")
-        ) {
+        console.log(
+          hoursPassed,
+          weatherData ? weatherData.name : "no weather data",
+          city
+        );
+        if (hoursPassed < 24 && parsedWeatherData.data.name === city) {
           setWeatherData(parsedWeatherData.data);
           return;
         }
@@ -81,9 +85,14 @@ function App() {
           </h1>
         </div>
 
-        {weatherData && <div>{JSON.stringify(weatherData)}</div>}
+        {/* {weatherData && <div>{JSON.stringify(weatherData)}</div>} */}
 
-        {weatherData && <WeatherDataComponent weatherData={weatherData} />}
+        <div className="flex flex-row items-center space-between h-2/3">
+          {weatherData && <WeatherTitleComponent weatherData={weatherData} />}
+          {weatherData && (
+            <WeatherDetailedComponent weatherData={weatherData} />
+          )}
+        </div>
       </>
     );
   } else {
@@ -91,6 +100,7 @@ function App() {
       <PlaceSearchComponent
         onPlaceSelect={(data) => {
           setIsSearchHidden(true);
+          setCity(data.name);
           setNewCoordinates({ lat: data.lat, lon: data.lng });
         }}
       ></PlaceSearchComponent>

@@ -4,13 +4,13 @@ type Props = {
   weatherData: any;
 };
 
-function WeatherDataComponent(props: Props) {
+function WeatherTitleComponent(props: Props) {
   let weatherIconsData =
     weatherIcons[props.weatherData.weather[0].id as keyof typeof weatherIcons];
   return (
     <>
-      <div className="weatherDataComponent w-full flex flex-col items-center">
-        <div className="weather-icon h-48 w-48">
+      <div className="weatherDataComponent w-full h-4/6 flex flex-row justify-center items-center">
+        <div className="weather-icon h-60 w-60">
           <img
             className="w-full h-full"
             src={"/src/assets/weather-icons/" + weatherIconsData.icon + ".svg"}
@@ -40,4 +40,4 @@ function WeatherDataComponent(props: Props) {
   );
 }
 
-export default WeatherDataComponent;
+export default WeatherTitleComponent;
