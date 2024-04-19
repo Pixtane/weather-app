@@ -1,12 +1,10 @@
-import weatherIcons from "../assets/weather-icons.json";
+import arrowsvg from "../assets/arrow.svg";
 
 type Props = {
   weatherData: any;
 };
 
 function WeatherTitleComponent(props: Props) {
-  let weatherIconsData =
-    weatherIcons[props.weatherData.weather[0].id as keyof typeof weatherIcons];
   return (
     <>
       <div className="mx-10 w-[30rem] ">
@@ -84,16 +82,12 @@ function WeatherTitleComponent(props: Props) {
                   fill="none"
                 />
 
-                <line
-                  x1="2.5rem"
-                  y1="2.5rem"
-                  x2="5rem"
-                  y2="0.5rem"
-                  transform={`rotate(${
-                    -props.weatherData.wind.deg - 90
-                  } 100 100)`}
-                  stroke="red"
-                  strokeWidth="2"
+                <image
+                  className="compass-arrow origin-[50%_50%]"
+                  xlinkHref={arrowsvg}
+                  width="10rem"
+                  height="10rem"
+                  transform={`rotate(${-props.weatherData.wind.deg - 45})`}
                 />
               </svg>
             </div>

@@ -55,7 +55,7 @@ body {
 }
 
 .infoBox hr {
-  @apply my-2 bg-gray-200 h-[1px] border-none opacity-50;
+  @apply my-2 bg-gray-400 h-[1px] border-none;
 }
 
 .infoValue {
