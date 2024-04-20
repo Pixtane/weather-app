@@ -6,6 +6,7 @@ type Props = {
 };
 
 function WeatherTitleComponent(props: Props) {
+  console.log("weather", props, weatherIcons);
   let weatherIconsData =
     weatherIcons[props.weatherData.weather[0].id as keyof typeof weatherIcons];
 
