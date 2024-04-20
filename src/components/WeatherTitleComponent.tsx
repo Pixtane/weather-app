@@ -9,8 +9,8 @@ function WeatherTitleComponent(props: Props) {
     weatherIcons[props.weatherData.weather[0].id as keyof typeof weatherIcons];
   return (
     <>
-      <div className="weatherDataComponent w-full h-4/6 flex flex-row justify-center items-center">
-        <div className="weather-icon h-60 w-60">
+      <div className="flex flex-col justify-center items-center w-full h-full md:flex-row weatherDataComponent">
+        <div className="w-60 h-60 weather-icon">
           <img
             className="w-full h-full"
             src={"/src/assets/weather-icons/" + weatherIconsData.icon + ".svg"}
@@ -18,13 +18,13 @@ function WeatherTitleComponent(props: Props) {
           />
         </div>
 
-        <div className="temperature mt-16 flex flex-col items-center">
+        <div className="flex flex-col items-center md:mt-16 temperature">
           <div className="flex text-9xl font-normal">
             {Number(props.weatherData.main.temp).toFixed(0)}
-            <p className="tracking-tighter text-5xl ml-0">°C</p>
+            <p className="ml-0 text-5xl tracking-tighter">°C</p>
           </div>
 
-          <div className="flex flex-row text-gray-50 items-center text-3xl mt-4">
+          <div className="flex flex-row items-center mt-4 text-3xl text-gray-50">
             {props.weatherData.weather[0].main}{" "}
             <div className="flex ml-3">
               {Number(props.weatherData.main.temp_min).toFixed(0)}
@@ -41,3 +41,4 @@ function WeatherTitleComponent(props: Props) {
 }
 
 export default WeatherTitleComponent;
+

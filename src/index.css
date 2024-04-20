@@ -17,7 +17,7 @@ body {
 }
 
 body {
-  font-family: 'Lexend Deca', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Lexend Deca", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   @apply text-white;
 }
 
@@ -37,7 +37,7 @@ body {
   position: absolute;
   content: attr(data-tooltip);
   border: 1px solid black;
-  padding: .25em;
+  padding: 0.25em;
   scale: 0;
   white-space: pre-line;
   @apply transition-all origin-top-right duration-300 delay-200 bg-gray-500 text-white border border-black rounded-md w-[30rem] right-6 top-[8rem] break-words;
@@ -49,9 +49,8 @@ body {
 }
 
 .infoBox {
-  background: linear-gradient(rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.3));
-  @apply font-normal m-2 p-3 rounded-2xl text-white;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+  @apply p-3 m-2 font-normal text-white rounded-2xl;
 }
 
 .infoBox hr {
@@ -62,6 +61,15 @@ body {
   @apply flex justify-between items-center font-light;
 }
 
-.infoValue> :nth-child(2) {
-  @apply font-medium text-lg;
+.infoValue > :nth-child(2) {
+  @apply text-lg font-medium;
 }
+
+a {
+  @apply text-[#1a8dff] hover:text-[#2265a8] underline;
+}
+
+.thanks {
+  @apply p-2 text-sm font-light text-center md:w-full md:left-1/2 md:absolute md:bottom-5 md:-translate-x-1/2;
+}
+
