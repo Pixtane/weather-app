@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import weatherIcons from "../assets/weather-icons.json";
 
 type Props = {
@@ -7,6 +8,28 @@ type Props = {
 function WeatherTitleComponent(props: Props) {
   let weatherIconsData =
     weatherIcons[props.weatherData.weather[0].id as keyof typeof weatherIcons];
+
+  useEffect(() => {
+    // Set the favicon dynamically
+    const favicon = document.querySelector(
+      'link[rel="icon"]'
+    ) as HTMLLinkElement;
+    const weatherIconsData =
+      weatherIcons[
+        props.weatherData.weather[0].id as keyof typeof weatherIcons
+      ];
+    if (favicon) {
+      favicon.href =
+        "/src/assets/weather-icons/" + weatherIconsData.icon + ".svg";
+    } else {
+      const newFavicon = document.createElement("link");
+      newFavicon.rel = "icon";
+      newFavicon.href =
+        "/src/assets/weather-icons/" + weatherIconsData.icon + ".svg";
+      document.head.appendChild(newFavicon);
+    }
+  }, [props.weatherData]);
+
   return (
     <>
       <div className="flex flex-col justify-center items-center w-full h-full md:flex-row weatherDataComponent">
@@ -41,4 +64,3 @@ function WeatherTitleComponent(props: Props) {
 }
 
 export default WeatherTitleComponent;
-
