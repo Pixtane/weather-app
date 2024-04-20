@@ -10,6 +10,11 @@ function App() {
   const [weatherData, setWeatherData] = useState<any>(null);
   const [city, setCity] = useState("London");
   const [isSearchHidden, setIsSearchHidden] = useState(true);
+  const [showTests, setShowTests] = useState(false);
+  const [selectedTest, setSelectedTest] = useState<string | null>(null);
+  const [selectedNumericalTest, setSelectedNumericalTest] = useState<
+    string | null
+  >(null);
 
   let storedCoordinates = localStorage.getItem("coordinates");
 
@@ -17,6 +22,86 @@ function App() {
     lat: storedCoordinates ? JSON.parse(storedCoordinates).lat : 51.50853,
     lon: storedCoordinates ? JSON.parse(storedCoordinates).lon : -0.12574,
   });
+
+  const testCodes = [
+    "01d",
+    "01n",
+    "02d",
+    "02n",
+    "03d",
+    "03n",
+    "04d",
+    "04n",
+    "09d",
+    "09n",
+    "10d",
+    "10n",
+    "11d",
+    "11n",
+    "13d",
+    "13n",
+    "50d",
+    "50n",
+  ];
+
+  const numericalCodes = [
+    "200",
+    "201",
+    "202",
+    "210",
+    "211",
+    "212",
+    "221",
+    "230",
+    "231",
+    "232",
+    "300",
+    "301",
+    "302",
+    "310",
+    "311",
+    "312",
+    "313",
+    "314",
+    "321",
+    "500",
+    "501",
+    "502",
+    "503",
+    "504",
+    "511",
+    "520",
+    "521",
+    "522",
+    "531",
+    "600",
+    "601",
+    "602",
+    "611",
+    "612",
+    "613",
+    "614",
+    "615",
+    "616",
+    "620",
+    "621",
+    "622",
+    "701",
+    "711",
+    "721",
+    "731",
+    "741",
+    "751",
+    "761",
+    "762",
+    "771",
+    "781",
+    "800",
+    "801",
+    "802",
+    "803",
+    "804",
+  ];
 
   function setNewCoordinates(newCoordinates: { lat: number; lon: number }) {
     localStorage.setItem("coordinates", JSON.stringify(newCoordinates));
@@ -75,13 +160,23 @@ function App() {
           {isSearchHidden && (
             <div className="absolute p-5 mt-1.5">
               <button onClick={() => setIsSearchHidden(false)}>
-                <img className="w-8 h-8" src={mapsvg} alt="search" />
+                <img
+                  className="w-8 h-8 hover:filter hover:brightness-75 transition-all"
+                  src={mapsvg}
+                  alt="search"
+                />
               </button>
             </div>
           )}
 
           <h1 className="p-5 w-full text-4xl font-semibold text-center">
-            {weatherData ? weatherData.name : "Weather app"}
+            <p
+              onClick={() => {
+                setShowTests(true);
+              }}
+            >
+              {weatherData ? weatherData.name : "Weather app"}
+            </p>
           </h1>
         </div>
 
@@ -93,6 +188,67 @@ function App() {
             <WeatherDetailedComponent weatherData={weatherData} />
           )}
         </div>
+
+        {showTests && (
+          <div className="w-screen h-screen bg-white absolute top-0 left-0 text-black">
+            <h1 className="text-6xl font-bold absolute top-20 left-1/2 -translate-x-1/2">
+              Tests
+            </h1>
+
+            <div className="flex flex-col items-center justify-center mt-48">
+              <div className="testsBox">
+                {testCodes.map((test, index) => (
+                  <div key={index} className="test">
+                    <input
+                      type="radio"
+                      id={`test${test}`}
+                      name="test"
+                      value={test}
+                      onChange={(e) => setSelectedTest(e.target.value)}
+                    />
+                    <label className="p-2" htmlFor={`test${test}`}>
+                      {test}
+                    </label>
+                  </div>
+                ))}
+              </div>
+              <div>
+                <select
+                  value={selectedTest || ""}
+                  onChange={(e) => setSelectedNumericalTest(e.target.value)}
+                >
+                  <option value="">Select Test Code</option>
+                  {numericalCodes.map((code, index) => (
+                    <option key={index} value={code}>
+                      {code}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            <div className="w-full flex justify-center">
+              <button
+                onClick={() => {
+                  setShowTests(false);
+                  setWeatherData((prevWeatherData: any) => ({
+                    ...prevWeatherData,
+                    weather: [
+                      {
+                        ...prevWeatherData.weather[0],
+                        id: selectedNumericalTest,
+                        icon: selectedTest,
+                      },
+                    ],
+                    ...prevWeatherData.weather,
+                  }));
+                }}
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     );
   } else {
@@ -109,4 +265,3 @@ function App() {
 }
 
 export default App;
-
