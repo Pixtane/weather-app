@@ -136,6 +136,10 @@ function WeatherTitleComponent(props: Props) {
               <a href="https://openweathermap.org/">OpenWeatherMap</a>. Also
               thanks to <a href="https://www.geonames.org/">GeoNames</a> for
               providing cities data.
+              <br />
+              <a href="https://cors-anywhere.herokuapp.com/corsdemo">
+                Proxy url
+              </a>
             </div>
           </div>
         </div>
