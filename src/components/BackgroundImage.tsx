@@ -1,4 +1,5 @@
 import * as backgrounds from "../../public/backgrounds";
+import RainComponent from "./RainComponent";
 
 type Props = {
   weatherData: any;
@@ -35,6 +36,16 @@ function BackgroundImage(props: Props) {
         src={lookup[weatherIcon].background}
         alt="Background"
       />
+
+      <div>
+        {["09d", "09n", "10d", "10n", "11d", "11n", "13d", "13n"].includes(
+          props.weatherData
+            ? props.weatherData.weather[0].icon
+              ? props.weatherData.weather[0].icon
+              : ""
+            : ""
+        ) && <RainComponent />}
+      </div>
     </div>
   );
 }
