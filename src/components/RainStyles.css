@@ -57,7 +57,7 @@ body,
 }
 
 .stem {
-  width: 1px;
+  width: 3px;
   height: 60%;
   margin-left: 7px;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25));
