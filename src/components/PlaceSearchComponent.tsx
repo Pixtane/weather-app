@@ -20,7 +20,7 @@ const PlaceSearchComponent = (props: Props) => {
   const handleSearch = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://api.geonames.org/searchJSON", {
+      const response = await axios.get("https://api.geonames.org/searchJSON", {
         params: {
           q: placeName,
           username: import.meta.env.VITE_GEONAMES_USERNAME,
