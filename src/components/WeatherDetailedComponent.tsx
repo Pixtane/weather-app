@@ -1,4 +1,4 @@
-import arrowsvg from "/arrow.svg";
+import arrowsvg from "../assets/arrow.svg";
 
 type Props = {
   weatherData: any;
@@ -145,3 +145,4 @@ function WeatherTitleComponent(props: Props) {
 }
 
 export default WeatherTitleComponent;
+

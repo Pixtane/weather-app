@@ -1,4 +1,4 @@
-import * as backgrounds from "/backgrounds";
+import * as backgrounds from "../assets/backgrounds";
 
 type Props = {
   weatherData: any;

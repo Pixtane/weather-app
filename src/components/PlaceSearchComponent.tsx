@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import countrycodes from "/countrycodes.json";
+import countrycodes from "../assets/countrycodes.json";
 interface Place {
   countryCode: any;
   name: string;
