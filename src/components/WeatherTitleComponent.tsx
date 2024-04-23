@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import weatherIcons from "../assets/weather-icons.json";
+import weatherIcons from "/weather-icons.json";
 
 type Props = {
   weatherData: any;
@@ -20,13 +20,11 @@ function WeatherTitleComponent(props: Props) {
         props.weatherData.weather[0].id as keyof typeof weatherIcons
       ];
     if (favicon) {
-      favicon.href =
-        "/src/assets/weather-icons/" + weatherIconsData.icon + ".svg";
+      favicon.href = "/weather-icons/" + weatherIconsData.icon + ".svg";
     } else {
       const newFavicon = document.createElement("link");
       newFavicon.rel = "icon";
-      newFavicon.href =
-        "/src/assets/weather-icons/" + weatherIconsData.icon + ".svg";
+      newFavicon.href = "/weather-icons/" + weatherIconsData.icon + ".svg";
       document.head.appendChild(newFavicon);
     }
   }, [props.weatherData]);
@@ -37,7 +35,7 @@ function WeatherTitleComponent(props: Props) {
         <div className="w-60 h-60 weather-icon">
           <img
             className="w-full h-full"
-            src={"/src/assets/weather-icons/" + weatherIconsData.icon + ".svg"}
+            src={"/weather-icons/" + weatherIconsData.icon + ".svg"}
             alt={weatherIconsData.description}
           />
         </div>

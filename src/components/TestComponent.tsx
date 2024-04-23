@@ -1,5 +1,5 @@
-import testCodes from "../assets/testCodes.json";
-import numericalCodes from "../assets/numericalCodes.json";
+import testCodes from "/testCodes.json";
+import numericalCodes from "/numericalCodes.json";
 
 type Props = {
   setSelectedTest: React.Dispatch<React.SetStateAction<string | null>>;
