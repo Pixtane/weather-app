@@ -26,6 +26,7 @@ const PlaceSearchComponent = (props: Props) => {
           username: import.meta.env.VITE_GEONAMES_USERNAME,
           featureClass: "P", // Populated places
         },
+        timeout: 5000,
       });
 
       const data = response.data;
