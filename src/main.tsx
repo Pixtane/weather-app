@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
-import "../public/fonts/Lexend_Deca/lexend_deca.css";
+import "/fonts/Lexend_Deca/lexend_deca.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

@@ -1,4 +1,4 @@
-import arrowsvg from "../../public/arrow.svg";
+import arrowsvg from "/arrow.svg";
 
 type Props = {
   weatherData: any;

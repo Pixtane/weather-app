@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import getWeatherData from "./getWeatherData";
 import PlaceSearchComponent from "./components/PlaceSearchComponent";
-import mapsvg from "../public/map.svg";
+import mapsvg from "/map.svg";
 import BackgroundImage from "./components/BackgroundImage";
 import WeatherTitleComponent from "./components/WeatherTitleComponent";
 import WeatherDetailedComponent from "./components/WeatherDetailedComponent";

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import weatherIcons from "../../public/weather-icons.json";
+import weatherIcons from "/weather-icons.json";
 
 type Props = {
   weatherData: any;
