@@ -10,6 +10,10 @@ async function getWeatherData(lat: number, lon: number) {
     const response = await axios.get(url, {
       headers: {
         "X-Api-Key": apiKey,
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
+        "Access-Control-Allow-Headers":
+          "Content-Type, Authorization, X-Requested-With",
       },
     });
 
@@ -21,7 +25,7 @@ async function getWeatherData(lat: number, lon: number) {
       return response.data;
     }
   } catch (error: any) {
-    console.error("Request failed:", error.message);
+    console.error("Request failed:", error);
     return null;
   }
 }
