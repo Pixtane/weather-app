@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import getWeatherData from "./getWeatherData";
 import PlaceSearchComponent from "./components/PlaceSearchComponent";
 import mapsvg from "./assets/map.svg";
@@ -6,7 +6,6 @@ import BackgroundImage from "./components/BackgroundImage";
 import WeatherTitleComponent from "./components/WeatherTitleComponent";
 import WeatherDetailedComponent from "./components/WeatherDetailedComponent";
 import TestComponent from "./components/TestComponent";
-import RainComponent from "./components/RainComponent";
 
 function App() {
   const [weatherData, setWeatherData] = useState<any>(null);
@@ -83,7 +82,7 @@ function App() {
             <div className="absolute p-5 mt-1.5">
               <button onClick={() => setIsSearchHidden(false)}>
                 <img
-                  className="w-8 h-8 hover:filter hover:brightness-75 transition-all"
+                  className="w-8 h-8 transition-all hover:filter hover:brightness-75"
                   src={mapsvg}
                   alt="search"
                 />
@@ -109,16 +108,6 @@ function App() {
           {weatherData && (
             <WeatherDetailedComponent weatherData={weatherData} />
           )}
-        </div>
-
-        <div>
-          {["09d", "09n", "10d", "10n", "11d", "11n", "13d", "13n"].includes(
-            weatherData
-              ? weatherData.weather[0].icon
-                ? weatherData.weather[0].icon
-                : ""
-              : ""
-          ) && <RainComponent />}
         </div>
 
         {showTests && (
@@ -147,3 +136,4 @@ function App() {
 }
 
 export default App;
+

@@ -1,12 +1,25 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "./RainStyles.css"; // Assuming you have the styles in a separate CSS file
 
-const RainComponent: React.FC = () => {
+type Props = {
+  speedMultiplier: number;
+  isSnow?: boolean;
+};
+
+const RainComponent = (props: Props) => {
   useEffect(() => {
     makeItRain();
-  }, []);
+  }, [props.speedMultiplier]);
 
   const makeItRain = () => {
+    document.documentElement.style.setProperty(
+      "--animation-duration",
+      `${0.5 / props.speedMultiplier}s`
+    );
+    console.log(
+      "Speed ",
+      document.documentElement.style.getPropertyValue("--animation-duration")
+    );
     const rainFrontRow = document.querySelector(".rain.front-row");
     const rainBackRow = document.querySelector(".rain.back-row");
 
@@ -24,10 +37,22 @@ const RainComponent: React.FC = () => {
         increment += randoFiver;
         drops += `<div class="drop" style="left: ${increment}%; bottom: ${
           randoFiver + randoFiver - 1 + 100
-        }%; animation-delay: 0.${randoHundo}s; animation-duration: 0.5${randoHundo}s;"><div class="stem" style="animation-delay: 0.${randoHundo}s; animation-duration: 0.5${randoHundo}s;"></div><div class="splat" style="animation-delay: 0.${randoHundo}s; animation-duration: 0.5${randoHundo}s;"></div></div>`;
+        }%; animation-delay: 0.${randoHundo}s; animation-duration: ${
+          Number(0.5 + "" + randoHundo) / props.speedMultiplier
+        }s;"><div class="stem" style="animation-delay: 0.${randoHundo}s; animation-duration: ${
+          Number(0.5 + "" + randoHundo) / props.speedMultiplier
+        }s;"></div><div class="splat" style="animation-delay: 0.${randoHundo}s; animation-duration: ${
+          Number(0.5 + "" + randoHundo) / props.speedMultiplier
+        }s;"></div></div>`;
         backDrops += `<div class="drop" style="right: ${increment}%; bottom: ${
           randoFiver + randoFiver - 1 + 100
-        }%; animation-delay: 0.${randoHundo}s; animation-duration: 0.5${randoHundo}s;"><div class="stem" style="animation-delay: 0.${randoHundo}s; animation-duration: 0.5${randoHundo}s;"></div><div class="splat" style="animation-delay: 0.${randoHundo}s; animation-duration: 0.5${randoHundo}s;"></div></div>`;
+        }%; animation-delay: 0.${randoHundo}s; animation-duration: ${
+          Number(0.5 + "" + randoHundo) / props.speedMultiplier
+        }s;"><div class="stem" style="animation-delay: 0.${randoHundo}s; animation-duration: ${
+          Number(0.5 + "" + randoHundo) / props.speedMultiplier
+        }s;"></div><div class="splat" style="animation-delay: 0.${randoHundo}s; animation-duration: ${
+          Number(0.5 + "" + randoHundo) / props.speedMultiplier
+        }s;"></div></div>`;
       }
 
       rainFrontRow.innerHTML = drops;
@@ -36,9 +61,7 @@ const RainComponent: React.FC = () => {
   };
 
   return (
-    <div
-      className={`rain-container back-row-toggle splat-toggle back-row-toggle`}
-    >
+    <div className={`rain-container back-row-toggle splat-toggle`}>
       <div className="rain front-row"></div>
       <div className="rain back-row"></div>
     </div>
@@ -46,3 +69,4 @@ const RainComponent: React.FC = () => {
 };
 
 export default RainComponent;
+

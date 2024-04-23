@@ -133,9 +133,8 @@ function WeatherTitleComponent(props: Props) {
 
             <div className="thanks">
               This app was made possible by{" "}
-              <a href="https://openweathermap.org/">OpenWeatherMap</a>. Also
-              thanks to <a href="https://www.geonames.org/">GeoNames</a> for
-              providing cities data.
+              <a href="https://openweathermap.org/">OpenWeatherMap</a> and{" "}
+              <a href="https://www.geonames.org/">GeoNames</a>.
             </div>
           </div>
         </div>
