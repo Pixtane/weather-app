@@ -8,7 +8,7 @@ body,
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  background: linear-gradient(to bottom, #20202000, #111119ff);
+  background: linear-gradient(to bottom, #20202000, #11111900);
   position: fixed;
   top: 0;
   left: 0;

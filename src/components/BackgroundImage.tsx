@@ -1,4 +1,4 @@
-import * as backgrounds from "../assets/backgrounds";
+import * as backgrounds from "../../public/backgrounds";
 import RainComponent from "./RainComponent";
 
 type Props = {

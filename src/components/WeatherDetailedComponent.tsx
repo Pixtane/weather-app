@@ -1,4 +1,4 @@
-import arrowsvg from "../assets/arrow.svg";
+import arrowsvg from "/arrow.svg";
 
 type Props = {
   weatherData: any;
@@ -134,7 +134,10 @@ function WeatherTitleComponent(props: Props) {
             <div className="thanks">
               This app was made possible by{" "}
               <a href="https://openweathermap.org/">OpenWeatherMap</a> and{" "}
-              <a href="https://www.geonames.org/">GeoNames</a>.
+              <a href="https://www.geonames.org/">GeoNames</a>. {" | "}
+              <a href="https://cors-anywhere.herokuapp.com/corsdemo">
+                Proxy url
+              </a>
             </div>
           </div>
         </div>

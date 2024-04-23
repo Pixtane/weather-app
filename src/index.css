@@ -70,5 +70,5 @@ a {
 }
 
 .thanks {
-  @apply p-2 text-sm font-light text-center md:w-full md:left-1/2 md:absolute md:bottom-0 md:-translate-x-1/2 md:bg-gray-600 md:bg-opacity-70;
+  @apply p-2 text-sm font-light text-center md:w-full md:left-1/2 md:absolute md:bottom-0 md:-translate-x-1/2 md:bg-gray-600 md:bg-opacity-60;
 }
