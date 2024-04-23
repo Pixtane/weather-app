@@ -20,14 +20,17 @@ const PlaceSearchComponent = (props: Props) => {
   const handleSearch = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://api.geonames.org/searchJSON", {
-        params: {
-          q: placeName,
-          username: import.meta.env.VITE_GEONAMES_USERNAME,
-          featureClass: "P", // Populated places
-        },
-        timeout: 5000,
-      });
+      const response = await axios.get(
+        "https://cors-anywhere.herokuapp.com/http://api.geonames.org/searchJSON",
+        {
+          params: {
+            q: placeName,
+            username: import.meta.env.VITE_GEONAMES_USERNAME,
+            featureClass: "P", // Populated places
+          },
+          timeout: 5000,
+        }
+      );
 
       const data = response.data;
       console.log("data", data);
