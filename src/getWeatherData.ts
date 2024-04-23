@@ -7,15 +7,7 @@ async function getWeatherData(lat: number, lon: number) {
   const url = `${proxyUrl}https://api.openweathermap.org/data/2.5/weather?lat=${lat}&units=metric&lon=${lon}&appid=${apiKey}`;
 
   try {
-    const response = await axios.get(url, {
-      headers: {
-        "X-Api-Key": apiKey,
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
-        "Access-Control-Allow-Headers":
-          "Content-Type, Authorization, X-Requested-With",
-      },
-    });
+    const response = await axios.get(url);
 
     if (response.status !== 200) {
       console.error(`Error: ${response.status} ${response.data}`);
