@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import getWeatherData from "./getWeatherData";
 import PlaceSearchComponent from "./components/PlaceSearchComponent";
 import mapsvg from "./assets/map.svg";

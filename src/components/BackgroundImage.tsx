@@ -1,4 +1,3 @@
-import * as React from "react";
 import * as backgrounds from "../assets/backgrounds";
 
 type Props = {

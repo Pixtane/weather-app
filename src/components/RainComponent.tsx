@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./RainStyles.css"; // Assuming you have the styles in a separate CSS file
 
 const RainComponent: React.FC = () => {
