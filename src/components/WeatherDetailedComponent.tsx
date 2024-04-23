@@ -133,11 +133,12 @@ function WeatherTitleComponent(props: Props) {
 
             <div className="thanks">
               This app was made possible by{" "}
-              <a href="https://openweathermap.org/">OpenWeatherMap</a>. Also
-              thanks to <a href="https://www.geonames.org/">GeoNames</a> for
-              providing cities data.
-              <br />
-              <a href="https://cors-anywhere.herokuapp.com/corsdemo">
+              <a href="https://openweathermap.org/">OpenWeatherMap</a> and{" "}
+              <a href="https://www.geonames.org/">GeoNames</a>. {" | "}
+              <a
+                data-tooltip-bottom="If places don't load, you can try going there and activating it."
+                href="https://cors-anywhere.herokuapp.com/corsdemo"
+              >
                 Proxy url
               </a>
             </div>
@@ -149,3 +150,4 @@ function WeatherTitleComponent(props: Props) {
 }
 
 export default WeatherTitleComponent;
+

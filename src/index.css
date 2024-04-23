@@ -43,6 +43,10 @@ body {
   @apply transition-all origin-top-right duration-300 delay-200 bg-gray-500 text-white border border-black rounded-md w-[30rem] right-6 top-[8rem] break-words;
 }
 
+[data-tooltip-bottom]::after {
+  @apply origin-bottom;
+}
+
 [data-tooltip]:hover::after {
   scale: 1;
   z-index: 1000;
@@ -61,7 +65,7 @@ body {
   @apply flex justify-between items-center font-light;
 }
 
-.infoValue> :nth-child(2) {
+.infoValue > :nth-child(2) {
   @apply text-lg font-medium;
 }
 

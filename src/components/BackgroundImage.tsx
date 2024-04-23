@@ -32,7 +32,7 @@ function BackgroundImage(props: Props) {
   return (
     <div>
       <img
-        className="background w-screen h-screen fixed -z-10 top-0 left-0 object-cover"
+        className="object-cover fixed top-0 left-0 w-screen h-screen background -z-10"
         src={lookup[weatherIcon].background}
         alt="Background"
       />
@@ -44,10 +44,24 @@ function BackgroundImage(props: Props) {
               ? props.weatherData.weather[0].icon
               : ""
             : ""
-        ) && <RainComponent />}
+        ) && (
+          <RainComponent
+            speedMultiplier={
+              ["09d", "09n"].includes(props.weatherData.weather[0].icon)
+                ? 3
+                : ["10d", "10n"].includes(props.weatherData.weather[0].icon)
+                ? 1
+                : ["11d", "11n"].includes(props.weatherData.weather[0].icon)
+                ? 5
+                : 0.5
+            }
+            isSnow={["13d", "13n"].includes(props.weatherData.weather[0].icon)}
+          />
+        )}
       </div>
     </div>
   );
 }
 
 export default BackgroundImage;
+

@@ -82,7 +82,7 @@ function App() {
             <div className="absolute p-5 mt-1.5">
               <button onClick={() => setIsSearchHidden(false)}>
                 <img
-                  className="w-8 h-8 hover:filter hover:brightness-75 transition-all"
+                  className="w-8 h-8 transition-all hover:filter hover:brightness-75"
                   src={mapsvg}
                   alt="search"
                 />
@@ -136,3 +136,4 @@ function App() {
 }
 
 export default App;
+
