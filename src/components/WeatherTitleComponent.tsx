@@ -46,7 +46,7 @@ function WeatherTitleComponent(props: Props) {
           </div>
 
           <div className="flex flex-row items-center mt-4 text-3xl text-gray-50">
-            {props.weatherData.weather[0].main}{" "}
+            {weatherIconsData.description}{" "}
             <div className="flex ml-3">
               {Number(props.weatherData.main.temp_min).toFixed(0)}
               <p className="tracking-tighter ml-0.5">°C</p>
@@ -62,4 +62,3 @@ function WeatherTitleComponent(props: Props) {
 }
 
 export default WeatherTitleComponent;
-
