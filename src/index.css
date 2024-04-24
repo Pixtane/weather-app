@@ -65,7 +65,7 @@ body {
   @apply flex justify-between items-center font-light;
 }
 
-.infoValue > :nth-child(2) {
+.infoValue> :nth-child(2) {
   @apply text-lg font-medium;
 }
 
@@ -74,5 +74,5 @@ a {
 }
 
 .thanks {
-  @apply p-2 text-sm font-light text-center md:w-full md:left-1/2 md:absolute md:bottom-0 md:-translate-x-1/2 md:bg-gray-600 md:bg-opacity-60;
+  @apply p-2 text-sm font-light text-center;
 }

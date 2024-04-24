@@ -130,7 +130,10 @@ function WeatherTitleComponent(props: Props) {
                 </svg>
               </div>
             </div>
-
+          </div>
+        </div>
+        <div className="infoBox">
+          <div className="infoValue">
             <div className="thanks">
               This app was made possible by{" "}
               <a href="https://openweathermap.org/">OpenWeatherMap</a> and{" "}
@@ -150,4 +153,3 @@ function WeatherTitleComponent(props: Props) {
 }
 
 export default WeatherTitleComponent;
-
