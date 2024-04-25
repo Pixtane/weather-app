@@ -46,7 +46,7 @@ function App() {
           weatherData ? weatherData.name : "no weather data",
           city
         );
-        if (hoursPassed < 24 && parsedWeatherData.data.name === city) {
+        if (hoursPassed < 6 && parsedWeatherData.data.name === city) {
           setWeatherData(parsedWeatherData.data);
           return;
         }
