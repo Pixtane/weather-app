@@ -18,7 +18,7 @@ const PlaceSearchComponent = (props: Props) => {
   const [loading, setLoading] = useState(false);
 
   async function axiosGetData(url: string) {
-    return await axios.get(url, {
+    return axios.get(url, {
       params: {
         q: placeName,
         username: import.meta.env.VITE_GEONAMES_USERNAME,
@@ -31,7 +31,7 @@ const PlaceSearchComponent = (props: Props) => {
   const handleSearch = async () => {
     try {
       setLoading(true);
-      const response: any = axiosGetData(
+      const response: any = await axiosGetData(
         "https://pixtane-proxy-b2c195238332.herokuapp.com/http://api.geonames.org/searchJSON"
       );
 
@@ -46,7 +46,7 @@ const PlaceSearchComponent = (props: Props) => {
       console.log("Retrying with open proxy...");
 
       try {
-        const response: any = axiosGetData(
+        const response: any = await axiosGetData(
           "https://cors-anywhere.herokuapp.com/http://api.geonames.org/searchJSON"
         );
 
@@ -61,7 +61,7 @@ const PlaceSearchComponent = (props: Props) => {
         console.log("Retrying using https with no proxy");
 
         try {
-          const response: any = axiosGetData(
+          const response: any = await axiosGetData(
             "https://api.geonames.org/searchJSON"
           );
 
