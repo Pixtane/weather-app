@@ -1,5 +1,6 @@
 import * as backgrounds from "../../public/backgrounds";
 import RainComponent from "./RainComponent";
+import SnowComponent from "./SnowComponent";
 
 type Props = {
   weatherData: any;
@@ -38,7 +39,7 @@ function BackgroundImage(props: Props) {
       />
 
       <div>
-        {["09d", "09n", "10d", "10n", "11d", "11n", "13d", "13n"].includes(
+        {["09d", "09n", "10d", "10n", "11d", "11n"].includes(
           props.weatherData
             ? props.weatherData.weather[0].icon
               ? props.weatherData.weather[0].icon
@@ -55,8 +56,10 @@ function BackgroundImage(props: Props) {
                 ? 5
                 : 0.5
             }
-            isSnow={["13d", "13n"].includes(props.weatherData.weather[0].icon)}
           />
+        )}
+        {["13d", "13n"].includes(props.weatherData.weather[0].icon) && (
+          <SnowComponent flakes={150} />
         )}
       </div>
     </div>
@@ -64,4 +67,3 @@ function BackgroundImage(props: Props) {
 }
 
 export default BackgroundImage;
-

@@ -1,0 +1,101 @@
+// Font
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
+// Snowflakes Config
+$flakes: 150; // match flakes in mark up
+$snowColor: #ffffff;
+$name: your-mixin-name;
+
+// Colors
+$topGradient: #00A3EF;
+$bottomGradient: #B7E7FC;
+$textColor: #ffffff;  
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+// Let it snow
+.snow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -9;
+}
+
+.flake {
+  position: absolute;
+  border-radius: 50%;
+  transform: translateY(0) rotateX(0) rotateY(0);
+  background-image: linear-gradient(180deg,
+      rgba(255, 255, 255, 0) 30%,
+      $snowColor 50%,
+      $snowColor 60%,
+      rgba(255, 255, 255, 0) 60%),
+    linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 30%,
+      $snowColor 50%,
+      $snowColor 60%,
+      rgba(255, 255, 255, 0) 60%),
+    linear-gradient(45deg,
+      rgba(255, 255, 255, 0) 33%,
+      $snowColor 53%,
+      $snowColor 57%,
+      rgba(255, 255, 255, 0) 65%),
+    linear-gradient(135deg,
+      rgba(255, 255, 255, 0) 33%,
+      $snowColor 53%,
+      $snowColor 57%,
+      rgba(255, 255, 255, 0) 65%);
+}
+
+@for $i from 1 through $flakes {
+  $flakeWidth: 5 + random(15); // Flake size
+  $flakeHeight: $flakeWidth;
+  $flakeVertical: -700 + random(700);
+  $flakeHorizontal: random(100);
+  $flakeBlur: 2 + random(2);
+  $flakeDelay: 15 + random(55); // Flake speed
+
+  .flake:nth-child(#{$i}) {
+    width: $flakeWidth + px;
+    height: $flakeHeight + px;
+    top: $flakeVertical + px;
+    left: #{$flakeHorizontal + "%"};
+    opacity: (50 + random(50)) * 0.01;
+    filter: blur($flakeBlur + px);
+    @include animation(#{$flakeDelay + s} flakes linear infinite);
+  }
+}
+
+@keyframes flakes {
+  100% {
+    transform: translateY(1000px) rotateX(10 + random(40) + deg) rotateY(10 + random(40) + deg);
+    opacity: 0;
+  }
+}
+
+// Other stuff
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Varela Round', sans-serif;
+  background-image: linear-gradient(to-top, $bottomGradient 0%, $topGradient 100%);
+}
+
+h1 {
+  text-align: center;
+  color: $textColor;
+  position: relative;
+  top: 25%;
+}

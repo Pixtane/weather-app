@@ -3,7 +3,6 @@ import "./RainStyles.css"; // Assuming you have the styles in a separate CSS fil
 
 type Props = {
   speedMultiplier: number;
-  isSnow?: boolean;
 };
 
 const RainComponent = (props: Props) => {
@@ -69,4 +68,3 @@ const RainComponent = (props: Props) => {
 };
 
 export default RainComponent;
-
