@@ -17,26 +17,64 @@ const PlaceSearchComponent = (props: Props) => {
   const [places, setPlaces] = useState<Place[]>([]);
   const [loading, setLoading] = useState(false);
 
+  async function axiosGetData(url: string) {
+    return await axios.get(url, {
+      params: {
+        q: placeName,
+        username: import.meta.env.VITE_GEONAMES_USERNAME,
+        featureClass: "P", // Populated places
+      },
+      timeout: 5000,
+    });
+  }
+
   const handleSearch = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(
-        "https://cors-anywhere.herokuapp.com/http://api.geonames.org/searchJSON",
-        {
-          params: {
-            q: placeName,
-            username: import.meta.env.VITE_GEONAMES_USERNAME,
-            featureClass: "P", // Populated places
-          },
-          timeout: 5000,
-        }
+      const response: any = axiosGetData(
+        "https://pixtane-proxy-b2c195238332.herokuapp.com/http://api.geonames.org/searchJSON"
       );
 
       const data = response.data;
       console.log("data", data);
       setPlaces(data.geonames);
     } catch (error) {
-      console.error("Error fetching data from GeoNames API:", error);
+      console.error(
+        "Error fetching data from GeoNames API using self hosted proxy:",
+        error
+      );
+      console.log("Retrying with open proxy...");
+
+      try {
+        const response: any = axiosGetData(
+          "https://cors-anywhere.herokuapp.com/http://api.geonames.org/searchJSON"
+        );
+
+        const data = response.data;
+        console.log("data", data);
+        setPlaces(data.geonames);
+      } catch (error) {
+        console.error(
+          "Error fetching data from GeoNames API using open proxy:",
+          error
+        );
+        console.log("Retrying using https with no proxy");
+
+        try {
+          const response: any = axiosGetData(
+            "https://api.geonames.org/searchJSON"
+          );
+
+          const data = response.data;
+          console.log("data", data);
+          setPlaces(data.geonames);
+        } catch (error) {
+          console.error("Error fetching data from GeoNames API:", error);
+          console.log(
+            "Search failed. Try again later or enable open proxy by going to https://cors-anywhere.herokuapp.com/corsdemo and clicking enable. Contant owner for support."
+          );
+        }
+      }
     } finally {
       setLoading(false);
     }
