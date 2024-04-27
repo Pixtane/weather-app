@@ -36,7 +36,7 @@ const PlaceSearchComponent = (props: Props) => {
       );
 
       const data = response.data;
-      console.log("data", data);
+      console.log("data", data, response);
       setPlaces(data.geonames);
     } catch (error) {
       console.error(
