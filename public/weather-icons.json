@@ -132,13 +132,13 @@
     "isRain": true
   },
   "503": {
-    "icon": "Rain",
+    "icon": "HeavyRain",
     "title": "Rain",
     "description": "Very heavy rain",
     "isRain": true
   },
   "504": {
-    "icon": "Rain",
+    "icon": "HeavyRain",
     "title": "Rain",
     "description": "Extreme rain",
     "isRain": true
@@ -150,7 +150,7 @@
     "isRain": true
   },
   "520": {
-    "icon": "HeavyRain",
+    "icon": "Rain",
     "title": "Rain",
     "description": "Light intensity shower rain",
     "isRain": true
@@ -279,7 +279,7 @@
     "description": "Dust"
   },
   "762": {
-    "icon": "BlowingDust",
+    "icon": "BlowingAsh",
     "title": "Ash",
     "description": "Volcanic Ash"
   },

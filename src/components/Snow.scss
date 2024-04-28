@@ -62,7 +62,7 @@ $textColor: #ffffff;
   $flakeVertical: -700 + random(700);
   $flakeHorizontal: random(100);
   $flakeBlur: 2 + random(2);
-  $flakeDelay: 15 + random(55); // Flake speed
+  $flakeDelay: 10 + random(15); // Flake speed
 
   .flake:nth-child(#{$i}) {
     width: $flakeWidth + px;

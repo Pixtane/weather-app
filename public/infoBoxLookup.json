@@ -1,0 +1,20 @@
+{
+  "01d": "linear-gradient(#12678277, #12678277)",
+  "01n": "linear-gradient(#212B3077, #212B3077)",
+  "02d": "linear-gradient(#224F7388, #224F7388)",
+  "02n": "linear-gradient(#1D2A3477, #1D2A3477)",
+  "03d": "linear-gradient(#25476999, #25476999)",
+  "03n": "linear-gradient(#202E3877, #202E3877)",
+  "04d": "linear-gradient(#73777A99, #73777A99)",
+  "04n": "linear-gradient(#202E3877, #202E3877)",
+  "09d": "linear-gradient(#50505099, #50505099)",
+  "09n": "linear-gradient(#202E3877, #202E3877)",
+  "010d": "linear-gradient(#50505099, #50505099)",
+  "010n": "linear-gradient(#202E3877, #202E3877)",
+  "011d": "linear-gradient(#50505099, #50505099)",
+  "011n": "linear-gradient(#202E3877, #202E3877)",
+  "013d": "linear-gradient(#73777A99, #73777A99)",
+  "013n": "linear-gradient(#202E3877, #202E3877)",
+  "050d": "linear-gradient(#73777A99, #73777A99)",
+  "050n": "linear-gradient(#202E3877, #202E3877)"
+}

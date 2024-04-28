@@ -1,68 +1,80 @@
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./RainStyles.css"; // Assuming you have the styles in a separate CSS file
 
 type Props = {
   speedMultiplier: number;
+  rainMultiplier: number;
 };
 
 const RainComponent = (props: Props) => {
+  const [drops, setDrops] = useState<JSX.Element[]>([]);
+  const [backDrops, setBackDrops] = useState<JSX.Element[]>([]);
+
   useEffect(() => {
-    makeItRain();
-  }, [props.speedMultiplier]);
+    generateRain();
+  }, [props.speedMultiplier, props.rainMultiplier]);
 
-  const makeItRain = () => {
-    document.documentElement.style.setProperty(
-      "--animation-duration",
-      `${0.5 / props.speedMultiplier}s`
-    );
-    console.log(
-      "Speed ",
-      document.documentElement.style.getPropertyValue("--animation-duration")
-    );
-    const rainFrontRow = document.querySelector(".rain.front-row");
-    const rainBackRow = document.querySelector(".rain.back-row");
+  const generateRain = () => {
+    let newDrops: JSX.Element[] = [];
+    let newBackDrops: JSX.Element[] = [];
 
-    if (rainFrontRow && rainBackRow) {
-      rainFrontRow.innerHTML = "";
-      rainBackRow.innerHTML = "";
+    for (let increment = 0; increment < 100 * props.rainMultiplier; ) {
+      const randoHundo = Math.floor(Math.random() * 98 + 1);
+      const randoFiver = Math.floor(Math.random() * 4 + 2);
+      increment += randoFiver + Math.random() - 1;
 
-      let increment = 0;
-      let drops = "";
-      let backDrops = "";
+      const dropStyle = {
+        left: `${increment / props.rainMultiplier}%`,
+        bottom: `${randoFiver + randoFiver - 1 + 100}%`,
+        animationDelay: `0.${randoHundo}s`,
+        animationDuration: `${
+          Number(
+            0.5 + "" + String(randoHundo + Math.random() / 100).replace(".", "")
+          ) / Number(props.speedMultiplier)
+        }s`,
+      };
 
-      while (increment < 100) {
-        const randoHundo = Math.floor(Math.random() * (98 - 1 + 1) + 1);
-        const randoFiver = Math.floor(Math.random() * (5 - 2 + 1) + 2);
-        increment += randoFiver;
-        drops += `<div class="drop" style="left: ${increment}%; bottom: ${
-          randoFiver + randoFiver - 1 + 100
-        }%; animation-delay: 0.${randoHundo}s; animation-duration: ${
-          Number(0.5 + "" + randoHundo) / props.speedMultiplier
-        }s;"><div class="stem" style="animation-delay: 0.${randoHundo}s; animation-duration: ${
-          Number(0.5 + "" + randoHundo) / props.speedMultiplier
-        }s;"></div><div class="splat" style="animation-delay: 0.${randoHundo}s; animation-duration: ${
-          Number(0.5 + "" + randoHundo) / props.speedMultiplier
-        }s;"></div></div>`;
-        backDrops += `<div class="drop" style="right: ${increment}%; bottom: ${
-          randoFiver + randoFiver - 1 + 100
-        }%; animation-delay: 0.${randoHundo}s; animation-duration: ${
-          Number(0.5 + "" + randoHundo) / props.speedMultiplier
-        }s;"><div class="stem" style="animation-delay: 0.${randoHundo}s; animation-duration: ${
-          Number(0.5 + "" + randoHundo) / props.speedMultiplier
-        }s;"></div><div class="splat" style="animation-delay: 0.${randoHundo}s; animation-duration: ${
-          Number(0.5 + "" + randoHundo) / props.speedMultiplier
-        }s;"></div></div>`;
-      }
+      const backDropStyle = {
+        right: `${increment}%`,
+        bottom: `${randoFiver + randoFiver - 1 + 100}%`,
+        animationDelay: `0.${randoHundo}s`,
+        animationDuration: `${
+          Number(
+            0.5 + "" + String(randoHundo + Math.random() / 100).replace(".", "")
+          ) / Number(props.speedMultiplier)
+        }s`,
+      };
 
-      rainFrontRow.innerHTML = drops;
-      rainBackRow.innerHTML = backDrops;
+      const drop = (
+        <div key={`drop-${increment}`} className="drop" style={dropStyle}>
+          <div className="stem" style={dropStyle}></div>
+          <div className="splat" style={dropStyle}></div>
+        </div>
+      );
+
+      const backDrop = (
+        <div
+          key={`back-drop-${increment}`}
+          className="drop"
+          style={backDropStyle}
+        >
+          <div className="stem" style={backDropStyle}></div>
+          <div className="splat" style={backDropStyle}></div>
+        </div>
+      );
+
+      newDrops.push(drop);
+      newBackDrops.push(backDrop);
     }
+
+    setDrops(newDrops);
+    setBackDrops(newBackDrops);
   };
 
   return (
     <div className={`rain-container back-row-toggle splat-toggle`}>
-      <div className="rain front-row"></div>
-      <div className="rain back-row"></div>
+      <div className="rain front-row">{drops}</div>
+      <div className="rain back-row">{backDrops}</div>
     </div>
   );
 };

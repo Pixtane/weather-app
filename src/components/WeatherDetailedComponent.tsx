@@ -1,10 +1,23 @@
+import { useEffect } from "react";
 import arrowsvg from "/arrow.svg";
+import weatherColors from "../../public/infoBoxLookup.json";
 
 type Props = {
   weatherData: any;
 };
 
 function WeatherTitleComponent(props: Props) {
+  useEffect(() => {
+    // Update CSS variables based on current weather condition
+    const root = document.documentElement;
+    const backgroundColor =
+      weatherColors[
+        props.weatherData.weather[0].icon as keyof typeof weatherColors
+      ] || "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3))";
+
+    root.style.setProperty("--background-color-default", backgroundColor);
+  }, [props.weatherData]);
+
   return (
     <>
       <div className="mx-10 md:w-[30rem] min-w-[13rem] w-full max-w-[30rem]">

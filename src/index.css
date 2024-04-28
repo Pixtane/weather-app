@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --background-color-default: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+}
+
 html,
 body {
   margin: 0;
@@ -9,6 +13,8 @@ body {
 
   width: 100%;
   height: 100%;
+
+  color-scheme: dark;
 }
 
 #root {
@@ -53,8 +59,8 @@ body {
 }
 
 .infoBox {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
-  @apply p-3 m-2 font-normal text-white rounded-2xl;
+  background: var(--background-color-default);
+  @apply p-3 m-2 px-4 font-normal text-white rounded-2xl shadow-lg backdrop-blur-xl;
 }
 
 .infoBox hr {
@@ -62,7 +68,7 @@ body {
 }
 
 .infoValue {
-  @apply flex justify-between items-center font-light;
+  @apply flex px-1 justify-between items-center font-light drop-shadow;
 }
 
 .infoValue> :nth-child(2) {

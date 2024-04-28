@@ -26,33 +26,39 @@ function WeatherTitleComponent(props: Props) {
       newFavicon.href = "/weather-icons/" + weatherIconsData.icon + ".svg";
       document.head.appendChild(newFavicon);
     }
+
+    document.title =
+      (props.weatherData.main.temp
+        ? Number(props.weatherData.main.temp).toFixed(0) + "° "
+        : "") +
+      (props.weatherData.name ? props.weatherData.name : "Weather app");
   }, [props.weatherData]);
 
   return (
     <>
       <div className="flex flex-col justify-center items-center w-full h-full md:flex-row weatherDataComponent">
-        <div className="w-60 h-60 weather-icon">
+        <div className="w-60 h-60 weather-icon hidden md:block">
           <img
-            className="w-full h-full"
+            className="w-full h-full drop-shadow-lg"
             src={"/weather-icons/" + weatherIconsData.icon + ".svg"}
             alt={weatherIconsData.description}
           />
         </div>
 
-        <div className="flex flex-col items-center md:mt-16 temperature">
-          <div className="flex text-9xl font-normal">
+        <div className="flex flex-col drop-shadow-lg items-center mt-40 mb-40 md:mb-0 md:mt-16 temperature">
+          <div className="flex text-9xl ml-10 font-normal">
             {Number(props.weatherData.main.temp).toFixed(0)}
             <p className="ml-0 text-5xl tracking-tighter">°C</p>
           </div>
 
-          <div className="flex flex-row items-center mt-4 text-3xl text-gray-50">
+          <div className="flex flex-col items-center text-center justify-center mt-4 text-3xl opacity-85">
             {weatherIconsData.description}{" "}
-            <div className="flex ml-3">
+            <div className="flex">
               {Number(props.weatherData.main.temp_min).toFixed(0)}
-              <p className="tracking-tighter ml-0.5">°C</p>
-              <p className="text-gray-300">/</p>
+              <p className="tracking-tighter ml-0.5">°</p>
+              <p className="opacity-60">/</p>
               {Number(props.weatherData.main.temp_max).toFixed(0)}
-              <p className="tracking-tighter ml-0.5">°C</p>
+              <p className="tracking-tighter ml-0.5">°</p>
             </div>
           </div>
         </div>

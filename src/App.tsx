@@ -78,32 +78,36 @@ function App() {
         {weatherData && <BackgroundImage weatherData={weatherData} />}
 
         <div className="flex pt-2 topNavbar">
-          {isSearchHidden && (
-            <div className="absolute p-5 mt-1.5">
-              <button onClick={() => setIsSearchHidden(false)}>
-                <img
-                  className="w-8 h-8 transition-all hover:filter hover:brightness-75"
-                  src={mapsvg}
-                  alt="search"
-                />
-              </button>
-            </div>
-          )}
+          <div className="absolute p-5 mt-1.5">
+            <button
+              className="transition-all duration-100 brightness-100 hover:brightness-75"
+              onClick={() => setIsSearchHidden(false)}
+              title="Search new location"
+            >
+              <img
+                className="w-8 h-8 drop-shadow-lg"
+                src={mapsvg}
+                alt="search"
+              />
+            </button>
+          </div>
 
-          <h1 className="p-5 w-full text-4xl font-semibold text-center">
-            <p
+          <h1 className="p-5 w-full text-4xl font-semibold flex justify-center text-center">
+            <button
+              title="Tests"
               onClick={() => {
                 setShowTests(true);
               }}
+              className="drop-shadow-lg"
             >
               {weatherData ? weatherData.name : "Weather app"}
-            </p>
+            </button>
           </h1>
         </div>
 
         {/* {weatherData && <div>{JSON.stringify(weatherData)}</div>} */}
 
-        <div className="flex flex-col gap-20 items-center h-2/3 md:flex-row space-between">
+        <div className="flex flex-col lg:gap-20 md:gap-10 gap-20 items-center h-2/3 md:flex-row space-between">
           {weatherData && <WeatherTitleComponent weatherData={weatherData} />}
           {weatherData && (
             <WeatherDetailedComponent weatherData={weatherData} />
@@ -136,4 +140,3 @@ function App() {
 }
 
 export default App;
-

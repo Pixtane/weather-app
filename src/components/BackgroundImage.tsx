@@ -49,12 +49,17 @@ function BackgroundImage(props: Props) {
           <RainComponent
             speedMultiplier={
               ["09d", "09n"].includes(props.weatherData.weather[0].icon)
+                ? 1.5
+                : ["10d", "10n"].includes(props.weatherData.weather[0].icon)
+                ? 1
+                : 2
+            }
+            rainMultiplier={
+              ["09d", "09n"].includes(props.weatherData.weather[0].icon)
                 ? 3
                 : ["10d", "10n"].includes(props.weatherData.weather[0].icon)
                 ? 1
-                : ["11d", "11n"].includes(props.weatherData.weather[0].icon)
-                ? 5
-                : 0.5
+                : 5
             }
           />
         )}

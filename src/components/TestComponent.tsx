@@ -19,7 +19,7 @@ function TestComponent({
   selectedNumericalTest,
 }: Props) {
   return (
-    <div className="w-screen h-screen bg-white absolute top-0 left-0 text-black">
+    <div className="w-screen h-screen bg-black bg-opacity-40 backdrop-blur-2xl absolute top-0 left-0 text-white">
       <h1 className="text-6xl font-bold absolute top-20 left-1/2 -translate-x-1/2">
         Tests
       </h1>
@@ -43,12 +43,15 @@ function TestComponent({
         </div>
         <div>
           <select
+            className="bg-transparent text-white"
             value={selectedTest || ""}
             onChange={(e) => setSelectedNumericalTest(e.target.value)}
           >
-            <option value="">Select Test Code</option>
+            <option className="bg-gray-800" value="">
+              Select Test Code
+            </option>
             {numericalCodes.map((code, index) => (
-              <option key={index} value={code}>
+              <option className="bg-gray-800" key={index} value={code}>
                 {code}
               </option>
             ))}
