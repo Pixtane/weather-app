@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 104.51 61.99">
+  <defs>
+    <style>
+      .e {
+        fill: url(#c);
+      }
+
+      .f {
+        opacity: .15;
+      }
+
+      .f,
+      .g,
+      .h,
+      .i,
+      .j,
+      .k {
+        fill: #f1f5f9;
+      }
+
+      .l {
+        fill: #f2f3e5;
+      }
+
+      .m {
+        fill: #e30613;
+      }
+
+      .g {
+        opacity: .3;
+      }
+
+      .h {
+        opacity: .1;
+      }
+
+      .n {
+        fill: url(#b);
+      }
+
+      .i {
+        opacity: .25;
+      }
+
+      .o {
+        fill: url(#d);
+      }
+
+      .j {
+        opacity: .2;
+      }
+
+      .k {
+        opacity: .05;
+      }
+    </style>
+    <linearGradient id="b" x1="54.51" y1="47.38" x2="54.51" y2="4.59" gradientTransform="matrix(1, 0, 0, 1, 0, 0)"
+      gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e3e8f1" stop-opacity="0" />
+      <stop offset="1" stop-color="#d3dbe2" />
+    </linearGradient>
+    <radialGradient id="c" cx="22.51" cy="47.38" fx="22.51" fy="47.38" r="14.61"
+      gradientTransform="matrix(1, 0, 0, 1, 0, 0)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f2f3e5" stop-opacity=".5" />
+      <stop offset=".43" stop-color="#f8f8f1" stop-opacity=".25" />
+      <stop offset=".79" stop-color="#fdfdfb" stop-opacity=".07" />
+      <stop offset=".98" stop-color="#fff" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="d" cx="22.51" cy="47.38" fx="22.51" fy="47.38" r="14.61"
+      gradientTransform="matrix(1, 0, 0, 1, 0, 0)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f2f3e5" />
+      <stop offset=".07" stop-color="#f3f4e7" stop-opacity=".91" />
+      <stop offset=".21" stop-color="#f6f6ed" stop-opacity=".69" />
+      <stop offset=".4" stop-color="#fafaf6" stop-opacity=".34" />
+      <stop offset=".58" stop-color="#fff" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <path class="n"
+    d="M78.51,28.66c-1.43-3.56-3.11-7.85-8-13.37-4.39-4.96-9.47-10.7-16-10.7s-11.61,5.74-16,10.7c-4.89,5.52-6.57,9.81-8,13.37-1.71,4.25-4.36,10.65-8,18.72h1.91c3.42-7.74,5.91-13.87,7.52-17.95,1.35-3.41,2.92-7.53,7.52-12.82,4.13-4.75,8.91-10.26,15.04-10.26s10.92,5.5,15.04,10.26c4.6,5.29,6.17,9.41,7.52,12.82,1.61,4.07,4.1,10.2,7.52,17.95h1.91c-3.64-8.08-6.29-14.47-8-18.72Z" />
+  <g>
+    <circle class="e" cx="22.51" cy="47.38" r="14.61" />
+    <circle class="o" cx="22.51" cy="47.38" r="14.61" />
+    <circle class="l" cx="22.51" cy="47.38" r="4" />
+  </g>
+  <rect class="g" x="4.51" y="32.14" width="100" height=".76" />
+  <rect class="i" x="5.51" y="34.61" width="98" height=".75" />
+  <rect class="j" x="6.51" y="37.15" width="96" height=".75" />
+  <rect class="f" x="7.51" y="39.69" width="94" height=".75" />
+  <rect class="h" x="8.51" y="42.12" width="92" height=".75" />
+  <rect class="k" x="9.52" y="44.55" width="90" height=".75" />
+  <rect class="m" x="45.51" y="7.27" width="1.61" height="1.61" />
+</svg>
