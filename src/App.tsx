@@ -13,7 +13,7 @@ function App() {
     JSON.parse(
       localStorage.getItem("city")
         ? (localStorage.getItem("city") as string)
-        : "{name:\"\"}"
+        : '{"name":""}'
     ).name
   );
   const [isSearchHidden, setIsSearchHidden] = useState(true);
