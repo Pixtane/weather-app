@@ -36,7 +36,7 @@ function WeatherTitleComponent(props: Props) {
 
   return (
     <>
-      <div className="flex flex-col justify-center items-center w-full h-full md:flex-row weatherDataComponent">
+      <div className="flex flex-col justify-center items-center w-full h-[calc(100vh-20rem)] md:mb-32 md:mt-28 md:flex-row weatherDataComponent">
         <div className="w-60 h-60 weather-icon hidden md:block">
           <img
             className="w-full h-full drop-shadow-lg"
@@ -45,7 +45,7 @@ function WeatherTitleComponent(props: Props) {
           />
         </div>
 
-        <div className="flex flex-col drop-shadow-lg items-center mt-40 mb-40 md:mb-0 md:mt-16 temperature">
+        <div className="flex flex-col drop-shadow-lg items-center mt-40 mb-40 md:mb-40 md:mt-40 temperature">
           <div className="flex text-9xl ml-10 font-normal">
             {Number(props.weatherData.main.temp).toFixed(0)}
             <p className="ml-0 text-5xl tracking-tighter">°C</p>

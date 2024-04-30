@@ -325,5 +325,243 @@
     "icon": "Cloudy",
     "title": "Unknown",
     "description": "Unknown"
+  },
+
+  "Clear": {
+    "icon": "Clear",
+    "night": "Clear-night",
+    "title": "Clear",
+    "description": "Clear sky"
+  },
+  "Blowing Or Drifting Snow": {
+    "icon": "Blizzard",
+    "title": "Snow",
+    "description": "Blowing or drifting snow",
+    "isSnow": true
+  },
+  "Heavy Freezing Drizzle/Freezing Rain": {
+    "icon": "FreezingDrizzle",
+    "title": "Freezing Rain",
+    "description": "Heavy freezing drizzle/freezing rain",
+    "isRain": true
+  },
+  "Light Freezing Drizzle/Freezing Rain": {
+    "icon": "FreezingDrizzle",
+    "title": "Freezing Rain",
+    "description": "Light freezing drizzle/freezing rain",
+    "isRain": true
+  },
+  "Freezing Fog": {
+    "icon": "Frigid",
+    "title": "Freezing Fog",
+    "description": "Freezing fog"
+  },
+  "Heavy Freezing Rain": {
+    "icon": "FreezingRain",
+    "title": "Freezing Rain",
+    "description": "Heavy freezing rain",
+    "isRain": true
+  },
+  "Light Freezing Rain": {
+    "icon": "FreezingRain",
+    "title": "Freezing Rain",
+    "description": "Light freezing rain",
+    "isRain": true
+  },
+  "Funnel Cloud/Tornado": {
+    "icon": "TropicalStorm",
+    "title": "Tornado",
+    "description": "Funnel cloud/tornado"
+  },
+  "Hail Showers": {
+    "icon": "Hail",
+    "title": "Hail",
+    "description": "Hail showers",
+    "isSnow": true
+  },
+  "Ice": {
+    "icon": "Hail",
+    "title": "Ice",
+    "description": "Ice",
+    "isSnow": true
+  },
+  "Lightning Without Thunder": {
+    "icon": "Thunderstorms",
+    "title": "Lightning Without Thunder",
+    "description": "Lightning without thunder"
+  },
+  "Mist": {
+    "icon": "Haze",
+    "night": "Haze-night",
+    "title": "Mist",
+    "description": "Mist"
+  },
+  "Drizzle": {
+    "icon": "Drizzle",
+    "title": "Drizzle",
+    "description": "Drizzle",
+    "isRain": true
+  },
+  "Precipitation In Vicinity": {
+    "icon": "WintryMix",
+    "title": "Precipitation",
+    "description": "Precipitation in vicinity",
+    "isRain": true
+  },
+  "Rain": {
+    "icon": "Rain",
+    "title": "Rain",
+    "description": "Rain",
+    "isRain": true
+  },
+  "Heavy Rain And Snow": {
+    "icon": "WintryMix",
+    "title": "Rain/Snow",
+    "description": "Heavy rain and snow",
+    "isRain": true
+  },
+  "Light Rain And Snow": {
+    "icon": "WintryMix",
+    "title": "Rain/Snow",
+    "description": "Light rain and snow",
+    "isRain": true
+  },
+  "Rain Showers": {
+    "icon": "Rain",
+    "title": "Rain",
+    "description": "Rain showers",
+    "isRain": true
+  },
+  "Heavy Rain": {
+    "icon": "HeavyRain",
+    "title": "Rain",
+    "description": "Heavy rain",
+    "isRain": true
+  },
+  "Light Rain": {
+    "icon": "Rain",
+    "title": "Rain",
+    "description": "Light rain",
+    "isRain": true
+  },
+  "Sky Coverage Decreasing": {
+    "icon": "MostlyClear",
+    "night": "MostlyClear-night",
+    "title": "Clouds go",
+    "description": "Sky coverage decreasing"
+  },
+  "Sky Coverage Increasing": {
+    "icon": "PartlyCloudy",
+    "title": "Clouds come",
+    "description": "Sky coverage increasing"
+  },
+  "Sky Unchanged": {
+    "icon": "MostlyClear",
+    "night": "MostlyClear-night",
+    "title": "Clouds stay",
+    "description": "Sky unchanged"
+  },
+  "Smoke Or Haze": {
+    "icon": "Smoky",
+    "night": "Smoky-night",
+    "title": "Smoke",
+    "description": "Smoke or haze"
+  },
+  "Snow": {
+    "icon": "Snow",
+    "title": "Snow",
+    "description": "Snow",
+    "isSnow": true
+  },
+  "Snow And Rain Showers": {
+    "icon": "WintryMix",
+    "title": "Rain/Snow",
+    "description": "Snow and rain showers",
+    "isRain": true
+  },
+  "Snow Showers": {
+    "icon": "Snow",
+    "title": "Snow",
+    "description": "Snow showers",
+    "isSnow": true
+  },
+  "Heavy Snow": {
+    "icon": "HeavySnow",
+    "title": "Snow",
+    "description": "Heavy snow",
+    "isSnow": true
+  },
+  "Light Snow": {
+    "icon": "Snow",
+    "title": "Snow",
+    "description": "Light snow",
+    "isSnow": true
+  },
+  "Squalls": {
+    "icon": "Breezy",
+    "title": "Squalls",
+    "description": "Squalls"
+  },
+  "Thunderstorm": {
+    "icon": "Thunderstorms",
+    "title": "Thunderstorm",
+    "description": "Thunderstorm",
+    "isRain": true
+  },
+  "Thunderstorm Without Precipitation": {
+    "icon": "Thunderstorms",
+    "title": "Dry Thunderstorm",
+    "description": "Thunderstorm without precipitation"
+  },
+  "Diamond Dust": {
+    "icon": "BlowingSnow",
+    "title": "Ice",
+    "description": "Diamond dust"
+  },
+  "Light Drizzle": {
+    "icon": "Drizzle",
+    "title": "Drizzle",
+    "description": "Light drizzle",
+    "isRain": true
+  },
+  "Hail": {
+    "icon": "Hail",
+    "title": "Hail",
+    "description": "Hail",
+    "isSnow": true
+  },
+  "Overcast": {
+    "icon": "Cloudy",
+    "title": "Clouds",
+    "description": "Overcast"
+  },
+  "Partially cloudy": {
+    "icon": "PartlyCloudy",
+    "night": "PartlyCloudy-night",
+    "title": "Partially cloudy",
+    "description": "Partially cloudy"
+  },
+  "Heavy Drizzle/Rain": {
+    "icon": "Rain",
+    "title": "Drizzle",
+    "description": "Heavy drizzle/rain",
+    "isRain": true
+  },
+  "Light Drizzle/Rain": {
+    "icon": "Drizzle",
+    "title": "Drizzle",
+    "description": "Light drizzle/rain",
+    "isRain": true
+  },
+  "Dust storm": {
+    "icon": "BlowingDust",
+    "title": "Dust",
+    "description": "Dust storm"
+  },
+  "Fog": {
+    "icon": "Foggy",
+    "night": "Foggy-night",
+    "title": "Fog",
+    "description": "Fog"
   }
 }

@@ -1,0 +1,30 @@
+{
+  "background_color": "#5787ad",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "pixtane-weather",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "pixtane-weather",
+  "start_url": "/",
+  "theme_color": "#2c4aa5",
+  "icons": [
+    {
+      "src": "/weather-icons/PartlyCloudy.svg",
+      "type": "image/svg+xml"
+    }
+  ],
+  "id": "1108 237",
+  "description": "A weather app with a nice design",
+  "lang": "en",
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://weather.com/",
+      "id": "/?from=launch:homescreen"
+    }
+  ],
+  "categories": [
+    "weather"
+  ]
+}

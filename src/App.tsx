@@ -9,7 +9,13 @@ import TestComponent from "./components/TestComponent";
 
 function App() {
   const [weatherData, setWeatherData] = useState<any>(null);
-  const [city, setCity] = useState("London");
+  const [city, setCity] = useState<string | null>(
+    JSON.parse(
+      localStorage.getItem("city")
+        ? (localStorage.getItem("city") as string)
+        : "{name:''}"
+    ).name
+  );
   const [isSearchHidden, setIsSearchHidden] = useState(true);
   const [showTests, setShowTests] = useState(false);
   const [selectedTest, setSelectedTest] = useState<string | null>(null);
@@ -25,6 +31,7 @@ function App() {
   });
 
   function setNewCoordinates(newCoordinates: { lat: number; lon: number }) {
+    console.log("setNewCoordinates", newCoordinates);
     localStorage.setItem("coordinates", JSON.stringify(newCoordinates));
     setCoordinates(newCoordinates);
   }
@@ -41,15 +48,35 @@ function App() {
           (currentTimestamp - storedTimestamp) / (1000 * 60 * 60);
 
         // If less than a day has passed, use stored data
-        console.log(
-          hoursPassed,
-          weatherData ? weatherData.name : "no weather data",
-          city
-        );
-        if (hoursPassed < 6 && parsedWeatherData.data.name === city) {
+        // console.log(
+        //   hoursPassed,
+        //   weatherData ? weatherData.name : "no weather data",
+        //   city,
+        //   parsedWeatherData.data.original.latitude,
+        //   parsedWeatherData.data.original.longitude,
+        //   coordinates.lat,
+        //   coordinates.lon
+        // );
+        if (
+          hoursPassed < 6 &&
+          parsedWeatherData.data.original.latitude ===
+            Number(coordinates.lat) &&
+          parsedWeatherData.data.original.longitude === Number(coordinates.lon)
+        ) {
           setWeatherData(parsedWeatherData.data);
           return;
         }
+      }
+
+      if (
+        localStorage.getItem("city") !== city &&
+        localStorage.getItem("city") !== null
+      ) {
+        console.log(
+          "city changed to",
+          JSON.parse(localStorage.getItem("city") as string).name
+        );
+        setCity(JSON.parse(localStorage.getItem("city") as string).name);
       }
 
       // If no data is stored or more than a day has passed, fetch new data
@@ -72,71 +99,65 @@ function App() {
     fetchData();
   }, [coordinates]); // Empty dependency array ensures this effect runs only once
 
-  if (isSearchHidden) {
-    return (
-      <div>
-        {weatherData && <BackgroundImage weatherData={weatherData} />}
+  return (
+    <div>
+      {weatherData && <BackgroundImage weatherData={weatherData} />}
 
-        <div className="flex pt-2 topNavbar">
-          <div className="absolute p-5 mt-1.5">
-            <button
-              className="transition-all duration-100 brightness-100 hover:brightness-75"
-              onClick={() => setIsSearchHidden(false)}
-              title="Search new location"
-            >
-              <img
-                className="w-8 h-8 drop-shadow-lg"
-                src={mapsvg}
-                alt="search"
-              />
-            </button>
-          </div>
+      <div className="flex pt-2 topNavbar">
+        <h1 className="p-5 w-full text-4xl font-semibold flex justify-center text-center">
+          <p
+            title="Tests"
+            onClick={() => {
+              setShowTests(true);
+            }}
+            className="drop-shadow-lg"
+          >
+            {city ? city : "Weather app"}
+          </p>
+        </h1>
 
-          <h1 className="p-5 w-full text-4xl font-semibold flex justify-center text-center">
-            <button
-              title="Tests"
-              onClick={() => {
-                setShowTests(true);
-              }}
-              className="drop-shadow-lg"
-            >
-              {weatherData ? weatherData.name : "Weather app"}
-            </button>
-          </h1>
+        <div className="absolute p-5 mt-1.5">
+          <button
+            className="transition-all duration-100 brightness-100 hover:brightness-75"
+            onClick={() => setIsSearchHidden(false)}
+            title="Search new location"
+          >
+            <img className="w-8 h-8 drop-shadow-lg" src={mapsvg} alt="search" />
+          </button>
         </div>
-
-        {/* {weatherData && <div>{JSON.stringify(weatherData)}</div>} */}
-
-        <div className="flex flex-col lg:gap-20 md:gap-10 gap-20 items-center h-2/3 md:flex-row space-between">
-          {weatherData && <WeatherTitleComponent weatherData={weatherData} />}
-          {weatherData && (
-            <WeatherDetailedComponent weatherData={weatherData} />
-          )}
-        </div>
-
-        {showTests && (
-          <TestComponent
-            setSelectedTest={setSelectedTest}
-            setSelectedNumericalTest={setSelectedNumericalTest}
-            setShowTests={setShowTests}
-            setWeatherData={setWeatherData}
-            selectedTest={selectedTest}
-            selectedNumericalTest={selectedNumericalTest}
-          ></TestComponent>
-        )}
       </div>
-    );
-  } else {
-    return (
-      <PlaceSearchComponent
-        onPlaceSelect={(data) => {
-          setIsSearchHidden(true);
-          setCity(data.name);
-          setNewCoordinates({ lat: data.lat, lon: data.lng });
-        }}
-      ></PlaceSearchComponent>
-    );
-  }
+
+      {/* {weatherData && <div>{JSON.stringify(weatherData)}</div>} */}
+
+      <div className="flex flex-col lg:gap-20 md:gap-10 gap-20 items-center h-2/3 md:flex-col space-between">
+        {weatherData && <WeatherTitleComponent weatherData={weatherData} />}
+        {weatherData && <WeatherDetailedComponent weatherData={weatherData} />}
+      </div>
+
+      {showTests && (
+        <TestComponent
+          setSelectedTest={setSelectedTest}
+          setSelectedNumericalTest={setSelectedNumericalTest}
+          setShowTests={setShowTests}
+          setWeatherData={setWeatherData}
+          selectedTest={selectedTest}
+          selectedNumericalTest={selectedNumericalTest}
+        ></TestComponent>
+      )}
+
+      {!isSearchHidden && (
+        <PlaceSearchComponent
+          exit={() => setIsSearchHidden(true)}
+          onPlaceSelect={(data) => {
+            localStorage.setItem("city", JSON.stringify(data));
+            setNewCoordinates({ lat: data.lat, lon: data.lng });
+            setIsSearchHidden(true);
+            setCity(data.name);
+          }}
+        ></PlaceSearchComponent>
+      )}
+    </div>
+  );
 }
 
 export default App;

@@ -17,12 +17,6 @@ const SunPath = ({
   ) => {
     const totalDuration = sunsetTime - sunriseTime;
     const currentDuration = Math.floor(currentTime / 1000) - sunriseTime;
-    console.log(
-      totalDuration,
-      currentDuration,
-      currentTime,
-      currentDuration / totalDuration
-    );
     return (currentDuration / totalDuration) * 100;
   };
 
@@ -61,12 +55,9 @@ const SunPath = ({
       sunriseTime,
       sunsetTime
     );
-    console.log("percentage", percentage);
     const newPosition = calculateSunCoordinates(percentage);
-    console.log("newPosition", newPosition);
     setSunPosition(newPosition);
   }, [currentTime, sunriseTime, sunsetTime]);
-  console.log("sunPosition", sunPosition);
 
   return (
     <svg

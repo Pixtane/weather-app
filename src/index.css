@@ -38,26 +38,6 @@ body {
   opacity: 1;
 }
 
-[data-tooltip]::after {
-  display: block;
-  position: absolute;
-  content: attr(data-tooltip);
-  border: 1px solid black;
-  padding: 0.25em;
-  scale: 0;
-  white-space: pre-line;
-  @apply transition-all origin-top-right duration-300 delay-200 bg-gray-500 text-white border border-black rounded-md w-[30rem] right-6 top-[8rem] break-words;
-}
-
-[data-tooltip-bottom]::after {
-  @apply origin-bottom;
-}
-
-[data-tooltip]:hover::after {
-  scale: 1;
-  z-index: 1000;
-}
-
 .infoBox {
   background: var(--background-color-default);
   @apply p-3 m-2 px-4 font-normal text-white rounded-2xl shadow-lg backdrop-blur-xl;

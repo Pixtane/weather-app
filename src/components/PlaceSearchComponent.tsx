@@ -10,6 +10,7 @@ interface Place {
 
 type Props = {
   onPlaceSelect: (place: Place) => void;
+  exit: () => void;
 };
 
 const PlaceSearchComponent = (props: Props) => {
@@ -81,8 +82,20 @@ const PlaceSearchComponent = (props: Props) => {
   };
 
   return (
-    <div className="min-h-full p-4 bg-gray-500">
-      <div className="flex gap-3">
+    <div className="w-screen h-full overflow-x-hidden bg-black bg-opacity-40 backdrop-blur-2xl absolute top-0 left-0 p-5">
+      <button className="transition-all duration-100 brightness-100 hover:brightness-75 absolute pt-3 pl-1 pr-5 pb-5 mt-1.5">
+        <img
+          onClick={() => {
+            props.exit();
+          }}
+          className="w-8 h-8 drop-shadow-lg"
+          src="/leave.svg"
+          alt="Go back"
+          title="Go back"
+        />
+      </button>
+
+      <div className="flex w-screen justify-center gap-3 pt-3">
         <input
           className="border p-1.5 bg-gray-100 rounded-lg font-semibold text-black"
           type="text"
@@ -100,14 +113,14 @@ const PlaceSearchComponent = (props: Props) => {
 
       <ul
         className={
-          `place-item ` + (loading ? "" : "place-item-enter ") + "mt-4 "
+          `place-item ` + (loading ? "" : "place-item-enter ") + "mt-4 px-16"
         }
       >
         {places.map((place, index) => (
           <li
             key={index + ": " + place.lat + "|" + place.lng}
             className={
-              "border border-gray-300 transition-all -mt-[1px] p-1.5 bg-gray-800 hover:bg-gray-700 active:bg-gray-600 cursor-pointer flex items-center justify-between " +
+              "border border-gray-300 transition-all -mt-[1px] p-1.5 bg-gray-900 bg-opacity-80 hover:bg-gray-800 active:bg-gray-700 cursor-pointer flex items-center justify-between " +
               (index === 0 ? "rounded-t-lg" : "")
             }
             onClick={() => props.onPlaceSelect(place)}
@@ -124,7 +137,7 @@ const PlaceSearchComponent = (props: Props) => {
             </div>
 
             <div
-              data-tooltip={JSON.stringify(place)
+              title={JSON.stringify(place)
                 .replace(/"[^"]*"/g, (match) => match.replace(/,/g, ""))
                 .replace(/"/g, "")
                 .replace(/:/g, ": ")
