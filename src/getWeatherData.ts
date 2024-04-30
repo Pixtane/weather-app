@@ -22,6 +22,10 @@ async function getOpenWeatherData(lat: number, lon: number) {
   }
 }
 
+if (false) {
+    getOpenWeatherData(0, 0); // Fixing unused?
+}
+
 function toC(temp: number) {
   return ((temp - 32) * 5) / 9;
 }
