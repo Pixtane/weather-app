@@ -52,7 +52,13 @@ function WeatherTitleComponent(props: Props) {
           </div>
 
           <div className="flex flex-col items-center text-center justify-center mt-4 text-3xl opacity-85">
-            {weatherIconsData.description}{" "}
+            {props.weatherData.weather[0].weatherList
+              .map(
+                (id: string) =>
+                  weatherIcons[id as keyof typeof weatherIcons]?.title ||
+                  "Unknown"
+              )
+              .join(", ")}{" "}
             <div className="flex">
               {Number(props.weatherData.main.temp_min).toFixed(0)}
               <p className="tracking-tighter ml-0.5">°</p>

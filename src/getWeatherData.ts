@@ -106,6 +106,7 @@ async function getWeatherData(lat: number, lon: number) {
           {
             icon: lookupIcon(data.currentConditions.icon),
             id: data.currentConditions.conditions.split(", ")[0],
+            weatherList: data.currentConditions.conditions.split(", "),
           },
         ],
         wind: {
