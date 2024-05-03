@@ -52,16 +52,15 @@ function App() {
         //   hoursPassed,
         //   weatherData ? weatherData.name : "no weather data",
         //   city,
-        //   parsedWeatherData.data.original.latitude,
-        //   parsedWeatherData.data.original.longitude,
+        //   parsedWeatherData.data.latitude,
+        //   parsedWeatherData.data.longitude,
         //   coordinates.lat,
         //   coordinates.lon
         // );
         if (
           hoursPassed < 6 &&
-          parsedWeatherData.data.original.latitude ===
-            Number(coordinates.lat) &&
-          parsedWeatherData.data.original.longitude === Number(coordinates.lon)
+          parsedWeatherData.data.latitude === Number(coordinates.lat) &&
+          parsedWeatherData.data.longitude === Number(coordinates.lon)
         ) {
           setWeatherData(parsedWeatherData.data);
           return;

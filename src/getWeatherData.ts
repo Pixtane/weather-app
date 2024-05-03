@@ -23,7 +23,7 @@ async function getOpenWeatherData(lat: number, lon: number) {
 }
 
 if (false) {
-    getOpenWeatherData(0, 0); // Fixing unused?
+  getOpenWeatherData(0, 0); // Fixing unused?
 }
 
 function toC(temp: number) {
@@ -122,7 +122,10 @@ async function getWeatherData(lat: number, lon: number) {
           sunrise: data.currentConditions.sunriseEpoch,
           sunset: data.currentConditions.sunsetEpoch,
         },
+        latitude: data.currentConditions.latitude,
+        longitude: data.currentConditions.longitude,
         visibility: (data.currentConditions.visibility * 1609.344).toFixed(2),
+        timezone: data.currentConditions.timezone,
         original: data,
       };
 
