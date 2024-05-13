@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background-color-default: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+  --background-color-default: rgba(0, 0, 0, 0.3);
 }
 
 html,
@@ -40,7 +40,7 @@ body {
 
 .infoBox {
   background: var(--background-color-default);
-  @apply p-3 m-2 px-4 font-normal text-white rounded-2xl shadow-lg backdrop-blur-xl;
+  @apply p-4 m-2 font-normal text-white rounded-2xl shadow-lg backdrop-blur-xl;
 }
 
 .infoBox hr {
@@ -61,4 +61,12 @@ a {
 
 .thanks {
   @apply p-2 text-sm font-light text-center;
+}
+
+.forecastRow {
+  @apply flex justify-between;
+}
+
+.forecastItem {
+  @apply flex mb-2 text-lg;
 }

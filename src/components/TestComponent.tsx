@@ -19,7 +19,7 @@ function TestComponent({
   selectedNumericalTest,
 }: Props) {
   return (
-    <div className="w-screen h-screen bg-black bg-opacity-40 backdrop-blur-2xl absolute top-0 left-0 text-white">
+    <div className="w-screen h-screen fixed bg-black bg-opacity-40 backdrop-blur-2xl top-0 left-0 text-white">
       <h1 className="text-6xl font-bold absolute top-20 left-1/2 -translate-x-1/2">
         Tests
       </h1>

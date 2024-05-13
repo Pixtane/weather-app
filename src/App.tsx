@@ -6,6 +6,7 @@ import BackgroundImage from "./components/BackgroundImage";
 import WeatherTitleComponent from "./components/WeatherTitleComponent";
 import WeatherDetailedComponent from "./components/WeatherDetailedComponent";
 import TestComponent from "./components/TestComponent";
+import Forecast from "./components/ForecastComponent";
 
 function App() {
   const [weatherData, setWeatherData] = useState<any>(null);
@@ -17,6 +18,7 @@ function App() {
     ).name
   );
   const [isSearchHidden, setIsSearchHidden] = useState(true);
+  const [isForecastHidden, setIsForecastHidden] = useState(true);
   const [showTests, setShowTests] = useState(false);
   const [selectedTest, setSelectedTest] = useState<string | null>(null);
   const [selectedNumericalTest, setSelectedNumericalTest] = useState<
@@ -52,6 +54,7 @@ function App() {
         //   hoursPassed,
         //   weatherData ? weatherData.name : "no weather data",
         //   city,
+        //   parsedWeatherData,
         //   parsedWeatherData.data.latitude,
         //   parsedWeatherData.data.longitude,
         //   coordinates.lat,
@@ -98,6 +101,10 @@ function App() {
     fetchData();
   }, [coordinates]); // Empty dependency array ensures this effect runs only once
 
+  function showForecast() {
+    setIsForecastHidden(!isForecastHidden);
+  }
+
   return (
     <div>
       {weatherData && <BackgroundImage weatherData={weatherData} />}
@@ -130,7 +137,12 @@ function App() {
 
       <div className="flex flex-col lg:gap-20 md:gap-10 gap-20 items-center h-2/3 md:flex-col space-between">
         {weatherData && <WeatherTitleComponent weatherData={weatherData} />}
-        {weatherData && <WeatherDetailedComponent weatherData={weatherData} />}
+        {weatherData && (
+          <WeatherDetailedComponent
+            showMoreForecast={showForecast}
+            weatherData={weatherData}
+          />
+        )}
       </div>
 
       {showTests && (
@@ -154,6 +166,10 @@ function App() {
             setCity(data.name);
           }}
         ></PlaceSearchComponent>
+      )}
+
+      {!isForecastHidden && (
+        <Forecast exit={showForecast} weatherData={weatherData}></Forecast>
       )}
     </div>
   );

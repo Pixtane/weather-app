@@ -30,6 +30,24 @@ function toC(temp: number) {
   return ((temp - 32) * 5) / 9;
 }
 
+function getRainTimeCoverage(data: any) {
+  let rainyHours = 0;
+
+  for (let i = 0; i < 24; i++) {
+    if (data.hours[i].precipprob > 25) {
+      rainyHours++;
+    }
+  }
+  return ((rainyHours / 24) * 100).toFixed(0);
+}
+
+function addRainTime(data: any) {
+  data.map((day: any) => {
+    day.rainTime = getRainTimeCoverage(day);
+  });
+  return data;
+}
+
 async function getWeatherData(lat: number, lon: number) {
   const apiKey = import.meta.env.VITE_API_KEY; // Replace with your actual API key
   const proxyUrl = ""; //"https://cors-anywhere.herokuapp.com/"; // Example CORS proxy
@@ -92,7 +110,7 @@ async function getWeatherData(lat: number, lon: number) {
         }
         return iconLookup[icon as keyof typeof iconLookup];
       }
-
+      data.days = addRainTime(data.days);
       let newData = {
         main: {
           feels_like: toC(data.currentConditions.feelslike),
@@ -113,6 +131,7 @@ async function getWeatherData(lat: number, lon: number) {
             weatherList: data.currentConditions.conditions.split(", "),
           },
         ],
+        daily: data.days,
         wind: {
           speed: (data.currentConditions.windspeed * 1.609344).toFixed(2),
           gust: (data.currentConditions.windgust * 1.609344).toFixed(2),
@@ -122,8 +141,8 @@ async function getWeatherData(lat: number, lon: number) {
           sunrise: data.currentConditions.sunriseEpoch,
           sunset: data.currentConditions.sunsetEpoch,
         },
-        latitude: data.currentConditions.latitude,
-        longitude: data.currentConditions.longitude,
+        latitude: data.latitude,
+        longitude: data.longitude,
         visibility: (data.currentConditions.visibility * 1609.344).toFixed(2),
         timezone: data.currentConditions.timezone,
         original: data,
@@ -139,3 +158,4 @@ async function getWeatherData(lat: number, lon: number) {
 }
 
 export default getWeatherData;
+export { toC };

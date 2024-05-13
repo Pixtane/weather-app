@@ -82,7 +82,7 @@ const PlaceSearchComponent = (props: Props) => {
   };
 
   return (
-    <div className="w-screen h-full overflow-x-hidden bg-black bg-opacity-40 backdrop-blur-2xl absolute top-0 left-0 p-5">
+    <div className="w-screen h-full overflow-x-hidden bg-black bg-opacity-40 backdrop-blur-2xl fixed top-0 left-0 p-5">
       <button className="transition-all duration-100 brightness-100 hover:brightness-75 absolute pt-3 pl-1 pr-5 pb-5 mt-1.5">
         <img
           onClick={() => {

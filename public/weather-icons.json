@@ -145,7 +145,7 @@
   },
   "511": {
     "icon": "FreezingRain",
-    "title": "Freezing rain",
+    "title": "Rain",
     "description": "Freezing rain",
     "isRain": true
   },
@@ -243,158 +243,182 @@
     "icon": "Haze",
     "night": "Haze-night",
     "title": "Mist",
-    "description": "Mist"
+    "description": "Mist",
+    "isRain": false
   },
   "711": {
     "icon": "Smoky",
     "night": "Smoky-night",
     "title": "Smoke",
-    "description": "Smoke"
+    "description": "Smoke",
+    "isRain": false
   },
   "721": {
     "icon": "Haze",
     "night": "Haze-night",
     "title": "Haze",
-    "description": "Haze"
+    "description": "Haze",
+    "isRain": false
   },
   "731": {
     "icon": "BlowingDust",
     "title": "Dust",
-    "description": "Dust"
+    "description": "Dust",
+    "isRain": false
   },
   "741": {
     "icon": "Foggy",
     "night": "Foggy-night",
     "title": "Fog",
-    "description": "Fog"
+    "description": "Fog",
+    "isRain": false
   },
   "751": {
     "icon": "BlowingDust",
     "title": "Sand",
-    "description": "Sand"
+    "description": "Sand",
+    "isRain": false
   },
   "761": {
     "icon": "BlowingDust",
     "title": "Dust",
-    "description": "Dust"
+    "description": "Dust",
+    "isRain": false
   },
   "762": {
     "icon": "BlowingAsh",
     "title": "Ash",
-    "description": "Volcanic Ash"
+    "description": "Volcanic Ash",
+    "isRain": false
   },
   "771": {
     "icon": "Breezy",
     "title": "Squalls",
-    "description": "Squalls"
+    "description": "Squalls",
+    "isRain": false
   },
   "781": {
     "icon": "Hurricane",
     "title": "Tornado",
-    "description": "Tornado"
+    "description": "Tornado",
+    "isRain": false
   },
   "800": {
     "icon": "Clear",
     "night": "Clear-night",
-    "title": "Clear sky",
-    "description": "Clear sky"
+    "title": "Clear",
+    "description": "Clear sky",
+    "isRain": false
   },
   "801": {
     "icon": "PartlyCloudy",
     "night": "PartlyCloudy-night",
-    "title": "Few clouds",
-    "description": "Few clouds"
+    "title": "Few",
+    "description": "Few clouds",
+    "isRain": false
   },
   "802": {
     "icon": "MostlyCloudy",
     "night": "MostlyCloudy-night",
-    "title": "Scattered clouds",
-    "description": "Scattered clouds"
+    "title": "Scattered",
+    "description": "Scattered clouds",
+    "isRain": false
   },
   "803": {
     "icon": "Cloudy",
-    "title": "Broken clouds",
-    "description": "Broken clouds"
+    "title": "Broken",
+    "description": "Broken clouds",
+    "isRain": false
   },
   "804": {
     "icon": "Cloudy",
-    "title": "Overcast clouds",
-    "description": "Overcast clouds"
+    "title": "Overcast",
+    "description": "Overcast clouds",
+    "isRain": false
   },
   "undefined": {
     "icon": "Cloudy",
     "title": "Unknown",
-    "description": "Unknown"
+    "description": "Unknown",
+    "isRain": false
   },
 
   "Clear": {
     "icon": "Clear",
     "night": "Clear-night",
     "title": "Clear",
-    "description": "Clear sky"
+    "description": "Clear sky",
+    "isRain": false
   },
   "Blowing Or Drifting Snow": {
     "icon": "Blizzard",
     "title": "Snow",
     "description": "Blowing or drifting snow",
-    "isSnow": true
+    "isSnow": true,
+    "isRain": false
   },
   "Heavy Freezing Drizzle/Freezing Rain": {
     "icon": "FreezingDrizzle",
-    "title": "Freezing Rain",
+    "title": "Rain",
     "description": "Heavy freezing drizzle/freezing rain",
     "isRain": true
   },
   "Light Freezing Drizzle/Freezing Rain": {
     "icon": "FreezingDrizzle",
-    "title": "Freezing Rain",
+    "title": "Rain",
     "description": "Light freezing drizzle/freezing rain",
     "isRain": true
   },
   "Freezing Fog": {
     "icon": "Frigid",
-    "title": "Freezing Fog",
-    "description": "Freezing fog"
+    "title": "Fog",
+    "description": "Freezing fog",
+    "isRain": false
   },
   "Heavy Freezing Rain": {
     "icon": "FreezingRain",
-    "title": "Freezing Rain",
+    "title": "Rain",
     "description": "Heavy freezing rain",
     "isRain": true
   },
   "Light Freezing Rain": {
     "icon": "FreezingRain",
-    "title": "Freezing Rain",
+    "title": "Rain",
     "description": "Light freezing rain",
     "isRain": true
   },
   "Funnel Cloud/Tornado": {
     "icon": "TropicalStorm",
     "title": "Tornado",
-    "description": "Funnel cloud/tornado"
+    "description": "Funnel cloud/tornado",
+    "isRain": false
   },
   "Hail Showers": {
     "icon": "Hail",
     "title": "Hail",
     "description": "Hail showers",
-    "isSnow": true
+    "isSnow": true,
+    "isRain": false
   },
   "Ice": {
     "icon": "Hail",
     "title": "Ice",
     "description": "Ice",
-    "isSnow": true
+    "isSnow": true,
+    "isRain": false
   },
   "Lightning Without Thunder": {
     "icon": "Thunderstorms",
-    "title": "Lightning Without Thunder",
-    "description": "Lightning without thunder"
+    "title": "Lightning",
+    "description": "Lightning without thunder",
+    "isRain": false
   },
   "Mist": {
     "icon": "Haze",
     "night": "Haze-night",
     "title": "Mist",
-    "description": "Mist"
+    "description": "Mist",
+    "isRain": false
   },
   "Drizzle": {
     "icon": "Drizzle",
@@ -448,30 +472,35 @@
     "icon": "MostlyClear",
     "night": "MostlyClear-night",
     "title": "Clouds go",
-    "description": "Sky coverage decreasing"
+    "description": "Sky coverage decreasing",
+    "isRain": false
   },
   "Sky Coverage Increasing": {
     "icon": "PartlyCloudy",
     "title": "Clouds come",
-    "description": "Sky coverage increasing"
+    "description": "Sky coverage increasing",
+    "isRain": false
   },
   "Sky Unchanged": {
     "icon": "MostlyClear",
     "night": "MostlyClear-night",
     "title": "Clouds stay",
-    "description": "Sky unchanged"
+    "description": "Sky unchanged",
+    "isRain": false
   },
   "Smoke Or Haze": {
     "icon": "Smoky",
     "night": "Smoky-night",
     "title": "Smoke",
-    "description": "Smoke or haze"
+    "description": "Smoke or haze",
+    "isRain": false
   },
   "Snow": {
     "icon": "Snow",
     "title": "Snow",
     "description": "Snow",
-    "isSnow": true
+    "isSnow": true,
+    "isRain": false
   },
   "Snow And Rain Showers": {
     "icon": "WintryMix",
@@ -483,24 +512,28 @@
     "icon": "Snow",
     "title": "Snow",
     "description": "Snow showers",
-    "isSnow": true
+    "isSnow": true,
+    "isRain": false
   },
   "Heavy Snow": {
     "icon": "HeavySnow",
     "title": "Snow",
     "description": "Heavy snow",
-    "isSnow": true
+    "isSnow": true,
+    "isRain": false
   },
   "Light Snow": {
     "icon": "Snow",
     "title": "Snow",
     "description": "Light snow",
+    "isRain": false,
     "isSnow": true
   },
   "Squalls": {
     "icon": "Breezy",
     "title": "Squalls",
-    "description": "Squalls"
+    "description": "Squalls",
+    "isRain": false
   },
   "Thunderstorm": {
     "icon": "Thunderstorms",
@@ -510,13 +543,15 @@
   },
   "Thunderstorm Without Precipitation": {
     "icon": "Thunderstorms",
-    "title": "Dry Thunderstorm",
-    "description": "Thunderstorm without precipitation"
+    "title": "Thunderstorm",
+    "description": "Thunderstorm without precipitation",
+    "isRain": false
   },
   "Diamond Dust": {
     "icon": "BlowingSnow",
     "title": "Ice",
-    "description": "Diamond dust"
+    "description": "Diamond dust",
+    "isRain": false
   },
   "Light Drizzle": {
     "icon": "Drizzle",
@@ -528,18 +563,21 @@
     "icon": "Hail",
     "title": "Hail",
     "description": "Hail",
-    "isSnow": true
+    "isSnow": true,
+    "isRain": false
   },
   "Overcast": {
     "icon": "Cloudy",
     "title": "Clouds",
-    "description": "Overcast"
+    "description": "Overcast",
+    "isRain": false
   },
   "Partially cloudy": {
     "icon": "PartlyCloudy",
     "night": "PartlyCloudy-night",
-    "title": "Partially cloudy",
-    "description": "Partially cloudy"
+    "title": "Scattered",
+    "description": "Partially cloudy",
+    "isRain": false
   },
   "Heavy Drizzle/Rain": {
     "icon": "Rain",
@@ -556,12 +594,14 @@
   "Dust storm": {
     "icon": "BlowingDust",
     "title": "Dust",
-    "description": "Dust storm"
+    "description": "Dust storm",
+    "isRain": false
   },
   "Fog": {
     "icon": "Foggy",
     "night": "Foggy-night",
     "title": "Fog",
-    "description": "Fog"
+    "description": "Fog",
+    "isRain": false
   }
 }
